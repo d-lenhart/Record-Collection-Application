@@ -15,11 +15,11 @@ import org.springframework.stereotype.Component;
 import com.techelevator.model.User;
 
 @Component
-public class JdbcUserDao implements UserDao {
+public class JdbcAuthenticationDao implements AuthenticationDao {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public JdbcUserDao(JdbcTemplate jdbcTemplate) {
+    public JdbcAuthenticationDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

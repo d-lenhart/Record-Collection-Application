@@ -16,12 +16,12 @@ public class JdbcUserDaoTests extends BaseDaoTests {
     protected static final User USER_2 = new User(2, "user2", "user2", "ROLE_USER");
     private static final User USER_3 = new User(3, "user3", "user3", "ROLE_USER");
 
-    private JdbcUserDao sut;
+    private JdbcAuthenticationDao sut;
 
     @Before
     public void setup() {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-        sut = new JdbcUserDao(jdbcTemplate);
+        sut = new JdbcAuthenticationDao(jdbcTemplate);
     }
 
     @Test(expected = IllegalArgumentException.class)
