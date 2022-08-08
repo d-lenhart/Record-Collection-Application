@@ -1,7 +1,10 @@
 package com.techelevator.dao;
 
-public interface StandardUserDao {
+import com.techelevator.model.Album;
 
+public interface StandardUserDao {
+    Album getAlbum(int albumId);
+    Album createAlbum(Album album);
 
 
 }

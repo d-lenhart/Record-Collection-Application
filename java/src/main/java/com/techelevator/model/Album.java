@@ -1,15 +1,18 @@
 package com.techelevator.model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 
 public class Album {
 
     private int albumId;
+    private String title;
     private LocalDate releaseDate;
     private String artist;
     private int numberOfTracks;
-    private int lengthInMinutes;
-    private Song tracklist;
+    private LocalTime playTime;
+    private List<Song> tracklist;
     private String genre;
     private String notes;
 
@@ -21,12 +24,14 @@ public class Album {
     public void setArtist(String artist) { this.artist = artist; }
     public int getNumberOfTracks() { return numberOfTracks; }
     public void setNumberOfTracks(int numberOfTracks) { this.numberOfTracks = numberOfTracks; }
-    public int getLengthInMinutes() { return lengthInMinutes; }
-    public void setLengthInMinutes(int lengthInMinutes) { this.lengthInMinutes = lengthInMinutes; }
-    public Song getTracklist() { return tracklist; }
-    public void setTracklist(Song tracklist) { this.tracklist = tracklist; }
+    public LocalTime getPlayTime() { return playTime; }
+    public void setPlayTime(LocalTime playTime) { this.playTime = playTime; }
+    public List<Song> getTracklist() { return tracklist; }
+    public void setTracklist(List<Song> tracklist) { this.tracklist = tracklist; }
     public String getGenre() { return genre; }
     public void setGenre(String genre) { this.genre = genre; }
     public String getNotes() { return notes; }
     public void setNotes(String notes) { this.notes = notes; }
+    public String getTitle() {return title;}
+    public void setTitle(String title) {this.title = title;}
 }
