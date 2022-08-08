@@ -1,6 +1,8 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Album;
+import com.techelevator.model.UserNotFoundException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
@@ -40,7 +42,21 @@ public class JdbcStandardUserDao implements StandardUserDao{
         return album;
     }
 
-    private Album mapRowToAlbum(SqlRowSet rowSet) {
+    @Override
+    public int findIdByUsername(String username) {
+        if (username == null) throw new IllegalArgumentException("Username cannot be null");
+
+        int userId;
+        try {
+            userId = jdbcTemplate.queryForObject("select user_id from users where username = ?", int.class, username);
+        } catch (NullPointerException | EmptyResultDataAccessException e) {
+            throw new UserNotFoundException();
+        }
+
+        return userId;
+    }
+
+        private Album mapRowToAlbum(SqlRowSet rowSet) {
         Album album = new Album();
 
         album.setArtist(rowSet.getString("artist"));
