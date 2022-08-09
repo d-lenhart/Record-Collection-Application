@@ -5,9 +5,12 @@ import com.techelevator.model.UserNotFoundException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 
+
+@Component
 public class JdbcStandardUserDao implements StandardUserDao{
     private final JdbcTemplate jdbcTemplate;
     public JdbcStandardUserDao(DataSource dataSource) {
@@ -18,7 +21,7 @@ public class JdbcStandardUserDao implements StandardUserDao{
     public Album getAlbum(int albumId) {
         Album album = null;
 
-        String sql = "SELECT columns " +
+        String sql = "SELECT artist, title, genre, play_time, notes, release_date, number_of_tracks " +
                 "FROM album " +
                 "WHERE album_id = ? ;";
 
@@ -33,13 +36,13 @@ public class JdbcStandardUserDao implements StandardUserDao{
 
     @Override
     public Album createAlbum(Album album) {
-        String sql = "INSERT INTO album(artist, title, genre, play_time, notes, release_date, track_list, number_of_tracks) " +
-                " VALUES (?, ?, ?, ?, ?, ?, ?, ? ) RETURNING album_id;";
+        String sql = "INSERT INTO album(artist, title, genre, play_time, notes, release_date, number_of_tracks) " +
+                " VALUES (?, ?, ?, ?, ?, ?, ? ) RETURNING album_id;";
 
         Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, album.getArtist(), album.getTitle(), album.getGenre(),
-                album.getPlayTime(), album.getNotes(), album.getReleaseDate(), album.getTracklist(), album.getNumberOfTracks());
+                album.getPlayTime(), album.getNotes(), album.getReleaseDate(), album.getNumberOfTracks());
 
-        return album;
+        return getAlbum(newId);
     }
 
     @Override

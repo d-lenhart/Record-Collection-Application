@@ -1,6 +1,7 @@
 BEGIN TRANSACTION;
 
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS album;
 
 CREATE TABLE users (
 	user_id SERIAL,
@@ -15,7 +16,7 @@ CREATE TABLE album (
     release_date date,
     artist varchar(200) NOT NULL,
     title varchar(300) NOT NULL,
-    number_of_tracks int(100),
+    number_of_tracks int,
     genre varchar(100),
     notes varchar(100000),
     play_time time,
