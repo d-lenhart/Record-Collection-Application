@@ -21,7 +21,7 @@ public class JdbcStandardUserDao implements StandardUserDao{
     public Album getAlbum(int albumId) {
         Album album = null;
 
-        String sql = "SELECT artist, title, genre, play_time, notes, release_date, number_of_tracks " +
+        String sql = "SELECT * " +
                 "FROM album_library " +
                 "WHERE album_id = ? ;";
 
@@ -35,12 +35,13 @@ public class JdbcStandardUserDao implements StandardUserDao{
     }
 
     @Override
-    public Album createAlbum(Album album, int userId) {
-        String sql = "INSERT INTO album_library(user_id, artist, title, genre, play_time, notes, release_date, number_of_tracks) " +
+    public Album createAlbum(Album album) {
+        String sql = "INSERT INTO album_library(user_id, release_date, artist, title, number_of_tracks, genre, notes, play_time) " +
                 " VALUES (?, ?, ?, ?, ?, ?, ?, ? ) RETURNING album_id;";
 
-        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, userId, album.getArtist(), album.getTitle(), album.getGenre(),
-                album.getPlayTime(), album.getNotes(), album.getReleaseDate(), album.getNumberOfTracks());
+        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, album.getUserId(), album.getReleaseDate(), album.getArtist(), album.getTitle(),
+                album.getNumberOfTracks(), album.getGenre(), album.getNotes(), album.getPlayTime());
+
 
         return getAlbum(newId);
     }

@@ -39,7 +39,7 @@ import recordService from "@/services/RecordService.js";
 import authService from "@/services/AuthService.js";
 
 export default {
-    name: "add-album",
+    name: "add-record",
     data() {
         return {
             errorMsg: "",

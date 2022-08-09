@@ -2,7 +2,7 @@
   <div id="app">
     <div>
     <header>
-      <img src="https://photos.app.goo.gl/twVzoDA8o2gMPbtX9" alt="a superdy duperdy cool thing" />
+      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
     </header>
     </div>
     <div id="nav">

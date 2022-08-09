@@ -25,15 +25,22 @@ public class StandardUserController {
 
     }
 
+    @RequestMapping(path = "/albums/{albumId}", method = RequestMethod.GET)
+    public Album getAlbumByUserId(@RequestBody @PathVariable int albumId) {
+        return standardUserDao.getAlbum(albumId);
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/albums/{userId}", method = RequestMethod.POST)
     public Album addAlbum(@Valid @RequestBody Album album, @PathVariable int userId, Principal user) {
 
         String username = user.getName();
             if (userId == this.standardUserDao.findIdByUsername(username)) {
-                return standardUserDao.createAlbum(album, userId);
+                return standardUserDao.createAlbum(album);
             }
             return null;
         }
+
+
 }
 
