@@ -8,6 +8,10 @@ export default {
 
   register(user) {
     return axios.post('/register', user)
+  },
+
+  getUserId(userId) {
+    return axios.get('/albums/' + userId);
   }
 
 }
