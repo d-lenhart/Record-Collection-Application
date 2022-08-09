@@ -1,7 +1,7 @@
 BEGIN TRANSACTION;
 
+DROP TABLE IF EXISTS album_library;
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS album;
 
 CREATE TABLE users (
 	user_id SERIAL,
@@ -11,8 +11,9 @@ CREATE TABLE users (
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
 
-CREATE TABLE album (
+CREATE TABLE album_library (
     album_id SERIAL,
+    user_id int,
     release_date date,
     artist varchar(200) NOT NULL,
     title varchar(300) NOT NULL,

@@ -60,7 +60,7 @@ export default {
             if (userId == authService.getUserId())
             
             
-            recordService.saveCard(this.card).then(
+            recordService.addRecord(this.album).then(
                 () => {
                     this.$router.push({name: "Albums"});
                 }

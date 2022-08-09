@@ -30,17 +30,10 @@ public class StandardUserController {
     public Album addAlbum(@Valid @RequestBody Album album, @PathVariable int userId, Principal user) {
 
         String username = user.getName();
-        userId = this.standardUserDao.findIdByUsername(username);
-
-        return standardUserDao.createAlbum(album);
-
-
-
-
-    }
-
-
-
-
+            if (userId == this.standardUserDao.findIdByUsername(username)) {
+                return standardUserDao.createAlbum(album, userId);
+            }
+            return null;
+        }
 }
 

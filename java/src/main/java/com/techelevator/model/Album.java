@@ -7,6 +7,7 @@ import java.util.List;
 public class Album {
 
     private int albumId;
+    private int userId;
     private String title;
     private LocalDate releaseDate;
     private String artist;
@@ -16,6 +17,8 @@ public class Album {
     private String genre;
     private String notes;
 
+    public void setUserId(int userId) { this.userId = userId; }
+    public int getUserId() { return userId; }
     public int getAlbumId() { return albumId; }
     public void setAlbumId(int albumId) { this.albumId = albumId; }
     public LocalDate getReleaseDate() { return releaseDate; }
