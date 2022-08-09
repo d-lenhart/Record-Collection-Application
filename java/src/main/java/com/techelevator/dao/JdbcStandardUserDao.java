@@ -63,6 +63,9 @@ public class JdbcStandardUserDao implements StandardUserDao{
         private Album mapRowToAlbum(SqlRowSet rowSet) {
         Album album = new Album();
 
+        album.setAlbumId(rowSet.getInt("album_id"));
+        album.setUserId(rowSet.getInt("user_id"));
+
         album.setArtist(rowSet.getString("artist"));
         album.setTitle(rowSet.getString("title"));
         if (rowSet.getDate("release_date") != null) {
