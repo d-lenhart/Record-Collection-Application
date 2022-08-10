@@ -99,6 +99,22 @@ export default {
   justify-content: center;
 }
 
+input[type=text] {
+    font-size: 30px;
+    text-align: center;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+input[type=password] {
+    font-size: 30px;
+    text-align: center;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+}
+
 button {
   font-size: 20px;
 

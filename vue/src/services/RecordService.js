@@ -1,13 +1,10 @@
 import axios from 'axios';
 
-const http = axios.create({
-    baseURL: "http://localhost:9000"
-  });
-
 export default {
 
   addRecord(newRecord, userId) {
-    return http.post('/albums/' + userId, newRecord);
+    console.log("Adding Record");
+    return axios.post('/albums/' + userId, newRecord);
 }
 
 }

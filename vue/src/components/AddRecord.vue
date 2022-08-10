@@ -1,43 +1,49 @@
 <template>
-  <div>
+  <div id="add-record">
       <!--Need to access userId-->
-      <form v-on:submit.prevent="addRecord">
-          <div>
-              <label for="">Artist</label>
+      <form class="form-addRecord" v-on:submit.prevent="addRecord">
+          <div class="input-line">
+              <label for="">Artist</label> &nbsp;
               <input type="text" id="albumArtist" v-model="album.artist" />
           </div>
-          <div>
-              <label for="">Title</label>
+          <div class="input-line">
+              <label for="">Title</label> &nbsp;
               <input type="text" id="albumTitle" v-model="album.title" />
           </div>
-          <div>
-              <label for="">Genre</label>
+          <div class="input-line">
+              <label for="">Genre</label> &nbsp;
               <input type="text" id="albumGenre" v-model="album.genre" />
           </div>
-          <div>
-              <label for="">Play Time</label>
-              <input type="text" id="albumPlayTime" v-model="album.playTime" />
+          <div class="input-line">
+              <label for="">Play Time</label> &nbsp;
+              <input type="text" id="albumPlayTime" placeholder="HH:MM:SS" v-model="album.playTime" />
           </div>
-          <div>
-              <label for="">Notes</label>
+          <div class="input-line">
+              <label for="">Notes</label> &nbsp;
               <input type="text" id="albumNotes" v-model="album.notes" />
           </div>
-          <div>
-              <label for="">Release Date</label>
-              <input type="text" id="albumReleaseDate" v-model="album.releaseDate" />
+          <div class="input-line">
+              <label for="">Release Date</label> &nbsp;
+              <input type="date" id="albumReleaseDate" v-model="album.releaseDate" />
           </div>
-          <div>
-              <label for="">Number Of Tracks</label>
-              <input type="text" id="albumNumberOfTracks" v-model="album.numberOfTracks" />
+          <div class="input-line">
+              <label for="">Number Of Tracks</label> &nbsp;
+              <input type="number"  min="1" id="albumNumberOfTracks" v-model="album.numberOfTracks" />
           </div>
-          <button type = "submit" v-on:click.prevent="addRecord" >Submit</button>
+          <button type = "submit">
+            <span id="content1">Add</span>
+            <span id="content2"></span>
+            <div class="inner-circle"></div>
+            <span id="content3"></span>
+            <span id="content4">Record</span>
+        </button>
       </form>
   </div>
 </template>
 
 <script>
 import recordService from "@/services/RecordService.js";
-import authService from "@/services/AuthService.js";
+//import authService from "@/services/AuthService.js";
 
 export default {
     name: "add-record",
@@ -58,9 +64,9 @@ export default {
     },
     //Need any props or "created()"?
     methods: {
-        addRecord(userId) {
+        addRecord() {
             const newRecord = {
-                userId : this.album.userId,
+                userId : this.$store.state.user.id,
                 artist : this.album.artist,
                 title: this.album.title,
                 genre: this.album.genre,
@@ -69,11 +75,11 @@ export default {
                 releaseDate: this.album.releaseDate,
                 numberOfTracks: this.album.numberOfTracks
             };
-
-            if (userId == authService.getUserId())
+                console.log("About to add record");
+           // if (userId == authService.getUserId())
             
             
-            recordService.addRecord(newRecord, 3).then(
+            recordService.addRecord(newRecord, this.$store.state.user.id).then(
                 () => {
                     this.$router.push({name: "Albums"});
                 }
@@ -103,6 +109,97 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.form-addRecord {
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 
+#add-record {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+input[type=text] {
+    font-size: 30px;
+    text-align: center;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+input[type=date] {
+    font-size: 30px;
+    text-align: center;
+    width: 240px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+input[type=number] {
+    font-size: 30px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+  font-size: 20px;
+
+  color: gold;
+
+  background-color: #003;
+  width: 150px;
+  height: 150px;
+  border-radius:100px;
+
+  font-family: 'Rubik', Calibri;
+
+  border-color: grey;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-circle {
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 75px;
+  border-color: #f7df5b;
+}
+
+#content1::after{
+    content: "\a";
+    white-space: pre;
+}
+
+#content2::after{
+    content: "\a";
+    white-space: pre;
+}
+
+#content3::after{
+    content: "\a";
+    white-space: pre;
+}
 </style>

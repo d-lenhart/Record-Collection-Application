@@ -129,6 +129,22 @@ button {
   justify-content: center;
 }
 
+input[type=text] {
+    font-size: 30px;
+    text-align: center;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+input[type=password] {
+    font-size: 30px;
+    text-align: center;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+}
+
 .inner-circle {
   background-color: white;
   width: 25px;
