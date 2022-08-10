@@ -13,11 +13,22 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "app",
+  data() {
+    return {
+      //image: "@/assets/810ptAJn4zL._AC_SL1500_.jpg"
+    }
+  }
+}
+</script>
+
 <style scoped>
 #app {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
 }
-
 
 </style>

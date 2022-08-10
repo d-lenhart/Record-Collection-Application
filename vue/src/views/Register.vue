@@ -34,7 +34,11 @@
       />
       <router-link :to="{ name: 'login' }">Have an account?</router-link>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
-        Create Account
+        <span id="content1">Create</span>
+        <span id="content2"></span>
+        <div class="inner-circle"></div>
+        <span id="content3"></span>
+        <span id="content4">Account</span>
       </button>
     </form>
   </div>
@@ -90,4 +94,61 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.form-register {
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#register {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+button {
+  font-size: 20px;
+
+  color: gold;
+
+  background-color: #003;
+  width: 150px;
+  height: 150px;
+  border-radius:100px;
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+  border-color: grey;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-circle {
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 75px;
+  border-color: #f7df5b;
+}
+
+#content1::after{
+    content: "\a";
+    white-space: pre;
+}
+
+#content2::after{
+    content: "\a";
+    white-space: pre;
+}
+
+#content3::after{
+    content: "\a";
+    white-space: pre;
+}
+</style>

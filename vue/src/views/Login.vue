@@ -1,4 +1,5 @@
 <template>
+<div class="background">  
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
@@ -42,6 +43,7 @@
       </button>
     </form>
   </div>
+</div>
 </template>
 
 <script>
@@ -83,6 +85,14 @@ export default {
 </script>
 
 <style scoped>
+.form-sign-in {
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 #login {
   display: flex;
   text-align: center;
@@ -99,7 +109,14 @@ button {
   height: 150px;
   border-radius:100px;
 
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+  border-color: grey;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .inner-circle {
@@ -108,8 +125,10 @@ button {
   height: 25px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   border-radius: 75px;
+  border-color: #f7df5b;
 }
 
 #content1::after{
