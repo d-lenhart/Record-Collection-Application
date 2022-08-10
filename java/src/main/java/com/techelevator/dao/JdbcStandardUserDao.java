@@ -8,6 +8,8 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Component
@@ -58,6 +60,22 @@ public class JdbcStandardUserDao implements StandardUserDao{
         }
 
         return userId;
+    }
+
+    @Override
+    public List<Album> showLibrary(int userId) {
+        List<Album> library = new ArrayList<>();
+
+        String sql = "SELECT release_date, artist, title, number_of_tracks, genre, notes, play_time " +
+                     "FROM album_library " +
+                     "WHERE user_id = ?;";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+
+        while(results.next()) {
+            library.add(mapRowToAlbum(results));
+        }
+        return library;
     }
 
         private Album mapRowToAlbum(SqlRowSet rowSet) {

@@ -21,8 +21,8 @@ CREATE TABLE album_library (
     genre varchar(100),
     notes varchar(100000),
     play_time time,
-    CONSTRAINT PK_album_library PRIMARY KEY(album_id),
-    CONSTRAINT FK_users FOREIGN KEY(user_id)
+    CONSTRAINT PK_album_library PRIMARY KEY(album_id)
+
 );
 
 COMMIT TRANSACTION;

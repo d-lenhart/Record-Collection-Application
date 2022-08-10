@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -25,11 +26,11 @@ public class StandardUserController {
 
     }
 
-    @RequestMapping(path = "/albums/{albumId}", method = RequestMethod.GET)
-    public Album getAlbumByUserId(@RequestBody @PathVariable int albumId) {
-
-        return standardUserDao.getAlbum(albumId);
-    }
+//    @RequestMapping(path = "/albums/{albumId}", method = RequestMethod.GET)
+//    public Album getAlbumByUserId(@RequestBody @PathVariable int albumId) {
+//
+//        return standardUserDao.getAlbum(albumId);
+//    }
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/albums/{userId}", method = RequestMethod.POST)
@@ -42,6 +43,13 @@ public class StandardUserController {
             return null;
         }
 
-
+    @RequestMapping(path = "/albums/{userId}", method = RequestMethod.GET)
+    public List<Album> showLibrary(@PathVariable int userId, Principal user) {
+        String username = user.getName();
+        if (userId == this.standardUserDao.findIdByUsername(username)) {
+            return standardUserDao.showLibrary(userId);
+        }
+        return null;
+    }
 }
 
