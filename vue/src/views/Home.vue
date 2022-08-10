@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <router-link v-bind:to="{name: 'Albums', params: {userId: 3} }">Add an album to your library</router-link>
+    <router-link v-bind:to="{name: 'Albums' }" v-if="$store.state.token != ''">Add an album to your library</router-link>
   </div>
 </template>
 

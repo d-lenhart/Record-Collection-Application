@@ -1,7 +1,7 @@
 <template>
   <div>
       <!--Need to access userId-->
-      <form v-on:submit.prevent="saveRecord(userId)">
+      <form v-on:submit.prevent="addRecord">
           <div>
               <label for="">Artist</label>
               <input type="text" id="albumArtist" v-model="album.artist" />
@@ -30,7 +30,7 @@
               <label for="">Number Of Tracks</label>
               <input type="text" id="albumNumberOfTracks" v-model="album.numberOfTracks" />
           </div>
-          <button type = "submit" v-on:click.prevent="resetForm" >Submit</button>
+          <button type = "submit" v-on:click.prevent="addRecord" >Submit</button>
       </form>
   </div>
 </template>
@@ -45,6 +45,7 @@ export default {
         return {
             errorMsg: "",
             album: {
+                userId: this.$store.state.user,
                 artist: "",
                 title: "",
                 genre: "",
@@ -58,10 +59,21 @@ export default {
     //Need any props or "created()"?
     methods: {
         addRecord(userId) {
+            const newRecord = {
+                userId : this.album.userId,
+                artist : this.album.artist,
+                title: this.album.title,
+                genre: this.album.genre,
+                playTime: this.album.playTime,
+                notes: this.album.notes,
+                releaseDate: this.album.releaseDate,
+                numberOfTracks: this.album.numberOfTracks
+            };
+
             if (userId == authService.getUserId())
             
             
-            recordService.addRecord(this.album.userId).then(
+            recordService.addRecord(newRecord, 3).then(
                 () => {
                     this.$router.push({name: "Albums"});
                 }

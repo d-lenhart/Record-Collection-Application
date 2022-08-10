@@ -6,8 +6,8 @@ const http = axios.create({
 
 export default {
 
-  addRecord(userId) {
-    return http.post('/albums/' + userId);
+  addRecord(newRecord, userId) {
+    return http.post('/albums/' + userId, newRecord);
 }
 
 }
