@@ -5,23 +5,23 @@
 </template>
 
 <script>
-//import RecordService from '@/services/RecordService.js'
+import RecordService from '@/services/RecordService.js'
 import AddRecord from '../components/AddRecord.vue'
 export default {
   components: { 
       AddRecord, 
-      //RecordService
+      RecordService
       },
        data() { 
            return {
                album: {}
            }
        },
-   /* created() {
+   created() {
         if(this.$route.params.albumId) {
             RecordService.
         }
-    }*/
+    }
 
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-<div class="background">  
+<div>  
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
@@ -85,7 +85,7 @@ export default {
 </script>
 
 <style scoped>
-.form-sign-in {
+.form-signin {
   font-size: 40px;
   display: flex;
   flex-direction: column;
