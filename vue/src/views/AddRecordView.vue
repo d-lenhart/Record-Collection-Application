@@ -5,12 +5,11 @@
 </template>
 
 <script>
-import RecordService from '@/services/RecordService.js'
+import recordService from '@/services/RecordService.js'
 import AddRecord from '../components/AddRecord.vue'
 export default {
   components: { 
       AddRecord, 
-      RecordService
       },
        data() { 
            return {
@@ -19,8 +18,12 @@ export default {
        },
    created() {
         if(this.$route.params.albumId) {
-            RecordService.
-        }
+            recordService.addRecord(this.$route.params.albumId).then(
+                response => {
+                    this.album = response.data;
+                }
+            );
+        } 
     }
 
 }

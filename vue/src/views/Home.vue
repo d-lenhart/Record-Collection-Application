@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
+    <router-link v-bind:to="{name: 'Albums', params: {userId: 3} }">Add an album to your library</router-link>
   </div>
 </template>
 

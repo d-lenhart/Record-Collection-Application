@@ -30,6 +30,7 @@
               <label for="">Number Of Tracks</label>
               <input type="text" id="albumNumberOfTracks" v-model="album.numberOfTracks" />
           </div>
+          <button type = "submit" v-on:click.prevent="resetForm" >Submit</button>
       </form>
   </div>
 </template>
@@ -60,7 +61,7 @@ export default {
             if (userId == authService.getUserId())
             
             
-            recordService.addRecord(this.album).then(
+            recordService.addRecord(this.album.userId).then(
                 () => {
                     this.$router.push({name: "Albums"});
                 }
@@ -75,6 +76,14 @@ export default {
                     }
                 }
             );
+            this.resetForm();
+            this.displayMessage("Your album has been submitted!")
+        },
+        resetForm() {
+            this.album = {};
+        },
+        displayMessage(message) {
+            alert(message);
         }
     }
 
