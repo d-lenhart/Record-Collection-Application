@@ -9,7 +9,7 @@ import recordService from '@/services/RecordService.js'
 import AddRecord from '../components/AddRecord.vue'
 export default {
   components: { 
-      AddRecord, 
+      AddRecord 
       },
        data() { 
            return {

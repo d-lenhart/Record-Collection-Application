@@ -32,8 +32,12 @@ export default {
 <style scoped>
 #app {
   height: 100%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Rubik', Calibri;
   font-weight: bold;
+}
+
+img {
+  border-radius: 20px;
 }
 
 header {
@@ -42,7 +46,8 @@ header {
 }
 
 #headerText {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: url("/images/ChicagoSkylineBlackAndWhiteCropped.jpg");;
+  font-family: 'Rubik', Calibri;
   color: navy;
   display: flex;
   align-items: center;

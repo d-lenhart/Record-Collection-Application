@@ -119,7 +119,7 @@ button {
   height: 150px;
   border-radius:100px;
 
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Rubik', Calibri;
 
   border-color: grey;
 
