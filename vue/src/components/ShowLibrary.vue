@@ -1,12 +1,23 @@
 <template>
-  
+  <div class="library">
+      <p> This is the library </p>
+      <album-display
+      v-for="album in albums"
+      v-bind:key="album.albumId"
+      v-bind:album="album"
+/>
+</div>
 </template>
 
 <script>
-import recordService from "@/services/RecordService.js"
+import recordService from "@/services/RecordService.js";
+import AlbumDisplay from "./AlbumDisplay.vue"
 
 export default {
     name: 'show-library',
+    components: {
+        AlbumDisplay
+    },
     data() {
         return {
             album: {
@@ -17,7 +28,10 @@ export default {
                 releaseDate: "",
                 playTime: "",
                 notes: ""
-            },
+            },     
+            albums: []
+                
+            ,       
             errorMsg: ""
         }
     },
@@ -28,7 +42,7 @@ export default {
         loadLibrary() {
             recordService.getLibrary(this.$store.state.user.id).then(
                 response => {
-                    let albums = response.data;
+                   this.albums = response.data;
                 }
             )
 

@@ -6,6 +6,7 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import AddRecordView from '../views/AddRecordView.vue'
+import ShowLibrary from '../components/ShowLibrary.vue'
 
 Vue.use(Router)
 
@@ -58,6 +59,11 @@ const router = new Router({
       path: '/albums/:userId',
       name: 'Albums',
       component: AddRecordView
+    },
+    {
+      path: '/library/:userId',
+      name: 'Library',
+      component: ShowLibrary
     }
   ]
 })
