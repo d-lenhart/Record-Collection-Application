@@ -37,11 +37,11 @@ public class StandardUserController {
     public Album addAlbum(@RequestBody Album album, @PathVariable int userId, Principal user) {
 
         String username = user.getName();
-            if (userId == this.standardUserDao.findIdByUsername(username)) {
-                return standardUserDao.createAlbum(album);
-            }
-            return null;
+        if (userId == this.standardUserDao.findIdByUsername(username)) {
+            return standardUserDao.createAlbum(album);
         }
+        return null;
+    }
 
     @RequestMapping(path = "/albums/{userId}", method = RequestMethod.GET)
     public List<Album> showLibrary(@PathVariable int userId, Principal user) {
@@ -50,6 +50,15 @@ public class StandardUserController {
             return standardUserDao.showLibrary(userId);
         }
         return null;
+    }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @RequestMapping(path = "/albums/{userId}/{albumId}", method = RequestMethod.PUT)
+    public void updateNotes(@Valid @RequestBody String notes, @PathVariable int userId, @PathVariable int albumId, Principal user) {
+        String username = user.getName();
+        if (userId == this.standardUserDao.findIdByUsername(username)) {
+            standardUserDao.updateNotes(notes, userId, albumId);
+        }
     }
 }
 
