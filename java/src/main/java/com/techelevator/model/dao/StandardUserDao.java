@@ -1,4 +1,4 @@
-package com.techelevator.dao;
+package com.techelevator.model.dao;
 
 import com.techelevator.model.Album;
 
@@ -10,5 +10,6 @@ public interface StandardUserDao {
     Album createAlbum(Album album);
     int findIdByUsername(String username);
     List<Album> showLibrary(int userId);
-    void updateNotes (String notes, int albumId, int userId);
+    void updateNotes (String notes, int userId, int albumId);
+
 }

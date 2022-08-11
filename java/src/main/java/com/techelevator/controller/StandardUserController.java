@@ -1,6 +1,6 @@
 package com.techelevator.controller;
 
-import com.techelevator.dao.StandardUserDao;
+import com.techelevator.model.dao.StandardUserDao;
 import com.techelevator.model.Album;
 
 import org.springframework.http.HttpStatus;
