@@ -1,4 +1,4 @@
-package com.techelevator.dao;
+package com.techelevator.model.dao;
 
 import com.techelevator.model.Album;
 import com.techelevator.model.UserNotFoundException;
@@ -78,11 +78,11 @@ public class JdbcStandardUserDao implements StandardUserDao{
         return library;
     }
     @Override
-    public void updateNotes (String notes, int albumId , int userId){
+    public void updateNotes (String notes, int userId, int albumId){
         String sql = "UPDATE album_library " +
                 "SET notes = ? " +
-                "WHERE album_id = ? AND user_id = ? ;";
-        jdbcTemplate.update(sql, notes, albumId , userId);
+                "WHERE user_id = ? AND album_id = ? ;";
+        jdbcTemplate.update(sql, notes, userId, albumId);
     }
         private Album mapRowToAlbum(SqlRowSet rowSet) {
         Album album = new Album();
