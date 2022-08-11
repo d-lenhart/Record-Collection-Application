@@ -36,7 +36,6 @@ export default {
 #app {
   height: 100%;
   font-family: 'Rubik', Calibri;
-  font-weight: bold;
 }
 
 img {

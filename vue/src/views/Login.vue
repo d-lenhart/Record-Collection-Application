@@ -125,7 +125,7 @@ button {
   height: 150px;
   border-radius:100px;
 
-  font-family: 'Rubik', Calibri;
+  font-family: 'Giveny', 'Rubik', Calibri;
 
   border-color: grey;
 
