@@ -9,5 +9,6 @@ public interface StandardUserDao {
     Album createAlbum(Album album);
     int findIdByUsername(String username);
     List<Album> showLibrary(int userId);
+    void updateNotes (Album album, int albumId, int userId);
 
 }
