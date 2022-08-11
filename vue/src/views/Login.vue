@@ -1,5 +1,15 @@
 <template>
-<div>  
+<div> 
+  <div>
+    <header>
+      <div id="headerImg">
+      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
+      </div>
+      <div id="headerText">
+        A vinyl hub and forum for enthusiasts and historians of the Chicago music scene
+      </div>
+    </header>
+</div> 
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
@@ -32,7 +42,7 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      <router-link class="router-link" :to="{ name: 'register' }">Need an account?</router-link>
       <button  type="submit">
         <span id="content1">Sign</span>
         <span id="content2"></span>
@@ -85,6 +95,29 @@ export default {
 </script>
 
 <style scoped>
+header {
+  display: flex;
+  font-size: 40px;
+}
+img {
+  border-radius: 20px;
+}
+
+#headerText {
+  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");;
+  font-family: 'Rubik', Calibri;
+  color: white;
+  text-shadow: -2px 2px 0 #000,
+                2px 2px 0 #000,
+                2px -2px 0 #000,
+               -2px -2px 0 #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+}
+
 .form-signin {
   font-size: 40px;
   display: flex;
@@ -97,6 +130,11 @@ export default {
   display: flex;
   text-align: center;
   justify-content: center;
+  color: #000;
+  text-shadow: -2px 2px 0 #f8bd82,
+                2px 2px 0 #f8bd82,
+                2px -2px 0 #f8bd82,
+               -2px -2px 0 #f8bd82;
 }
 
 input[type=text] {
@@ -160,5 +198,13 @@ button {
 #content3::after{
     content: "\a";
     white-space: pre;
+}
+
+.router-link {
+  color: #cd7f32;
+  text-shadow: -2px 2px 0 #000,
+                2px 2px 0 #000,
+                2px -2px 0 #000,
+               -2px -2px 0 #000;
 }
 </style>

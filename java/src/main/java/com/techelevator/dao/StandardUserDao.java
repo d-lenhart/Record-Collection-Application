@@ -10,6 +10,5 @@ public interface StandardUserDao {
     Album createAlbum(Album album);
     int findIdByUsername(String username);
     List<Album> showLibrary(int userId);
-    void updateNotes (@Valid String album, int albumId, int userId);
-
+    void updateNotes (String notes, int albumId, int userId);
 }

@@ -78,13 +78,15 @@ public class JdbcStandardUserDao implements StandardUserDao{
         return library;
     }
     @Override
-    public void updateNotes (String notes, int albumId , int userId){
+    public void updateNotes(String notes, int albumId , int userId){
         String sql = "UPDATE album_library " +
                 "SET notes = ? " +
                 "WHERE album_id = ? AND user_id = ? ;";
         jdbcTemplate.update(sql, notes, albumId , userId);
     }
-        private Album mapRowToAlbum(SqlRowSet rowSet) {
+
+
+    private Album mapRowToAlbum(SqlRowSet rowSet) {
         Album album = new Album();
 
         album.setAlbumId(rowSet.getInt("album_id"));
