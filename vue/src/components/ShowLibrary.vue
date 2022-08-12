@@ -1,16 +1,18 @@
 <template>
-  <div class="library">
-      <p> This is the library </p>
-      <album-display class="container"
+<div class="library">
+    <header class="libraryHeader">
+        <h1>{{user.username}}'s Library</h1>
+    </header>
+     <album-display class="container"
       v-for="album in albums"
       v-bind:key="album.albumId"
-      v-bind:album="album"
-/>
+      v-bind:album="album"/>
 </div>
 </template>
 
 <script>
 import recordService from "@/services/RecordService.js";
+
 import AlbumDisplay from "./AlbumDisplay.vue"
 
 export default {
@@ -31,7 +33,10 @@ export default {
             },     
             albums: []
                 
-            ,       
+            ,
+            user:{
+                username: this.$store.state.user.username
+            }   ,    
             errorMsg: ""
         }
     },
@@ -54,21 +59,40 @@ export default {
 </script>
 
 <style>
-.library {
+div > .library {
+    background-image: url("/images/record-shelf-vintage-vinyl-aa5f5bfe6ab88cb4c124cefdbd2c41e1.jpg");
+    background-size: cover;
+    
+    
+}
+.container {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
     gap: 30px;
+    
 }
 
-header {
+.libraryHeader {
   display: flex;
+  justify-content: center;
   font-size: 60px;
+  color: gold;
+  text-shadow: -3px 3px 0 maroon,
+                2px 2px 0 #000,
+                2px -2px 0 #000,
+               -2px -2px 0 #000;
+   padding-bottom: 2%;
+   background-color: #333333
 }
 
 img {
   border-radius: 20px;
+}
+
+#nav {
+    padding-bottom:3%;
 }
 
 #headerText {
@@ -85,4 +109,5 @@ img {
   text-align: center;
   border-radius: 20px;
 }
+
 </style>

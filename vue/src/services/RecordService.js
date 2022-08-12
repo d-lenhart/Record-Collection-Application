@@ -8,5 +8,13 @@ export default {
 
   getLibrary(userId) {
     return axios.get('/albums/' + userId);
-  }
+  },
+
+/*   getMbid(title) {
+     axios.get('http://musicbrainz.org/ws/2/annotation/?query=name:' + title)
+
+   },
+  getAlbumArt(mbid) {
+    return axios.get(' https://coverartarchive.org/release/' + mbid)
+  } */
 }

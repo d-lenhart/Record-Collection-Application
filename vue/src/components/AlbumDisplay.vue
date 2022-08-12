@@ -2,15 +2,13 @@
 <div> 
   <div>
     <header>
-      <div id="headerImg">
-      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
-      </div>
-      <div id="headerText">
-        MY LIBRARY
-      </div>
+      
     </header>
 </div>
 <div class="album-container">
+  <div id="headerImg">
+      <img src="@/assets/logo.png" class ='albumImg' alt="a superdy duperdy cool thing" />
+      </div>
   <div class="album" v-bind:key="album.albumId">
     <h3>{{ album.title }}</h3>
     <p>{{ album.artist }}</p>
@@ -79,17 +77,9 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  background-color: lightblue;
+  border-radius: 15px;
 }
-
-
-
-
-
-
-
-
-
-
 button {
   font-size: 20px;
 

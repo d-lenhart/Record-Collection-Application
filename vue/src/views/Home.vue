@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="homeBackground">
 <div>
     <header>
       <div id="headerImg">
@@ -11,7 +11,6 @@
     </header>
 </div>
   <div class="home">
-    <h1>Home</h1>
     <router-link v-bind:to="{name: 'Albums' }" v-if="$store.state.token != ''">Add an album to your library</router-link>
   </div>
 </div>
@@ -23,10 +22,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+div > .homeBackground  {
+background-image: url("/images/MuddyWatersVinyl.jpg")
+}
 header {
   display: flex;
   font-size: 40px;
+
 }
 img {
   border-radius: 20px;

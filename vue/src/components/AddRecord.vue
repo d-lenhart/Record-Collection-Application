@@ -58,7 +58,9 @@ export default {
                 playTime: "",
                 notes: "",
                 releaseDate: "",
-                numberOfTracks: ""
+                numberOfTracks: "",
+                /* mbid: "",
+                albumArt: "" */
             }
         }
     },
@@ -73,7 +75,9 @@ export default {
                 playTime: this.album.playTime,
                 notes: this.album.notes,
                 releaseDate: this.album.releaseDate,
-                numberOfTracks: this.album.numberOfTracks
+                numberOfTracks: this.album.numberOfTracks,
+                /* mbid: this.getMbid(),
+                albumArt: this.getAlbumArt(), */
             };
                 console.log("About to add record");
            // if (userId == authService.getUserId())
@@ -102,7 +106,13 @@ export default {
         },
         displayMessage(message) {
             alert(message);
-        }
+        },
+   /*      getMbid() {
+           this.mbid = recordService.getMbid(this.title);
+        },
+        getAlbumArt() {
+          this.albumArt = recordService.getAlbumArt(this.mbid);      
+        } */
     }
 
 

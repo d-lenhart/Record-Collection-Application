@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 header {
   display: flex;
   font-size: 60px;
