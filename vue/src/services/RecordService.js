@@ -10,8 +10,11 @@ export default {
     return axios.get('/albums/' + userId);
   },
 
-  updateNote(updatedAlbum, userId, albumId) {
-    return axios.put('/albums/' + userId + '/' + albumId, updatedAlbum);
+  updateNote(updatedNote, userId, albumId) {
+    return axios.put('/albums/' + userId + '/' + albumId, updatedNote, {
+      headers: {
+          'Content-Type': 'application/json',
+      }});
   }
 
 /*   getMbid(title) {

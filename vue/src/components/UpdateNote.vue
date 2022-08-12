@@ -39,20 +39,22 @@ export default {
     },
     methods: {
         updateNote() {
-             const updatedAlbum = {
-                 userId : this.$store.state.user.id,
-                 albumId: this.$route.params.albumId,
-                 artist : this.album.artist,
-                 title: this.album.title,
-                 genre: this.album.genre,
-                 playTime: this.album.playTime,
-                 notes: this.album.notes,
-                 releaseDate: this.album.releaseDate,
-                 numberOfTracks: this.album.numberOfTracks,
-             }
+            // const updatedNote = this.album.notes;
+
+              const updatedAlbum = {
+                  userId : this.$store.state.user.id,
+                  albumId: this.$route.params.albumId,
+                  artist : this.album.artist,
+                  title: this.album.title,
+                  genre: this.album.genre,
+                  playTime: this.album.playTime,
+                  notes: this.album.notes,
+                  releaseDate: this.album.releaseDate,
+                  numberOfTracks: this.album.numberOfTracks,
+              }
             const albumId = this.$route.params.albumId;
 
-            recordService.addRecord(updatedAlbum, this.$store.state.user.id, albumId).then(
+            recordService.updateNote(updatedAlbum.notes, this.$store.state.user.id, albumId).then(
                 () => {
                     this.$router.commit({name: "update-note"});
                 }

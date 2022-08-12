@@ -51,7 +51,7 @@ public class StandardUserController {
 
     @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
     @RequestMapping(path = "/albums/{userId}/{albumId}", method = RequestMethod.PUT)
-    public void updateNotes(@Valid @RequestBody String notes, @PathVariable int userId, @PathVariable int albumId, Principal user) {
+    public void updateNotes(@RequestBody String notes, @PathVariable int userId, @PathVariable int albumId, Principal user) {
         String username = user.getName();
         if (userId == this.standardUserDao.findIdByUsername(username)) {
             standardUserDao.updateNotes(notes, userId, albumId);
