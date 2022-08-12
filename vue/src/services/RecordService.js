@@ -10,6 +10,10 @@ export default {
     return axios.get('/albums/' + userId);
   },
 
+  updateNote(updatedAlbum, userId, albumId) {
+    return axios.put('/albums/' + userId + '/' + albumId, updatedAlbum);
+  }
+
 /*   getMbid(title) {
      axios.get('http://musicbrainz.org/ws/2/annotation/?query=name:' + title)
 

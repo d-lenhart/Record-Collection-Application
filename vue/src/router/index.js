@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import AddRecordView from '../views/AddRecordView.vue'
 import ShowLibrary from '../components/ShowLibrary.vue'
+import UpdateNote from '../components/UpdateNote.vue'
 
 Vue.use(Router)
 
@@ -64,6 +65,11 @@ const router = new Router({
       path: '/library/:userId',
       name: 'Library',
       component: ShowLibrary
+    },
+    {
+      path: '/albums/:userId/:albumId',
+      name: 'update-note',
+      component: UpdateNote
     }
   ]
 })

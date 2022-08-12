@@ -17,17 +17,27 @@
     <p>{{ album.releaseDate }}</p>
     <p>{{ album.playTime }}</p>
     <p>{{ album.notes }}</p>
+    <button>Update Notes</button>
+    <update-note v-if="condition" />
   
-    <p>test sample text</p>
   </div>
 </div>
 </div>
 </template>
 
 <script>
+import UpdateNote from '@/components/UpdateNote.vue'
 export default {
   name: "album-display",
+  components: {
+    UpdateNote
+  },
   props: ["album"],
+  methods: {
+    showForm() {
+
+    }
+  }
 
 };
 </script>
