@@ -24,7 +24,7 @@ CREATE TABLE album_library (
     notes varchar(100000),
     play_time time,
     CONSTRAINT PK_album_library PRIMARY KEY(album_id),
-    CONSTRAINT FK_user_id FOREIGN KEY (user_id) REFERENCES user(user_id)
+    CONSTRAINT FK_user_id FOREIGN KEY (user_id) REFERENCES users(user_id)
 
 );
 
