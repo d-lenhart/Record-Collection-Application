@@ -57,7 +57,15 @@ public class StandardUserController {
             standardUserDao.updateNotes(notes, userId, albumId);
         }
     }
-    
+
+    @RequestMapping(path = "/albums/{userId}/delete/{albumId}", method = RequestMethod.DELETE)
+    public void deleteAlbum(@Valid  @PathVariable int userId, @Valid @PathVariable int albumId, Principal user) {
+        String username = user.getName();
+        if (userId == this.standardUserDao.findIdByUsername(username)) {
+            standardUserDao.deleteAlbum(userId, albumId);
+        }
+    }
+
 
 }
 
