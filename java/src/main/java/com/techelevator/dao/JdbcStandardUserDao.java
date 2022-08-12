@@ -1,4 +1,4 @@
-package com.techelevator.model.dao;
+package com.techelevator.dao;
 
 import com.techelevator.model.Album;
 import com.techelevator.model.UserNotFoundException;

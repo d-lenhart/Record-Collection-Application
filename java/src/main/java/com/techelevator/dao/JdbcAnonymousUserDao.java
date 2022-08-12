@@ -1,4 +1,4 @@
-package com.techelevator.model.dao;
+package com.techelevator.dao;
 
 import org.springframework.stereotype.Component;
 
