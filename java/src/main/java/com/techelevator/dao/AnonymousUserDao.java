@@ -1,4 +1,4 @@
-package com.techelevator.model.dao;
+package com.techelevator.dao;
 
 public interface AnonymousUserDao {
 }

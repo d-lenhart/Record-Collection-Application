@@ -1,4 +1,4 @@
-package com.techelevator.model.dao;
+package com.techelevator.dao;
 
 import java.util.ArrayList;
 import java.util.List;
