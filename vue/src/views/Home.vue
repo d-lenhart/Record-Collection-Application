@@ -24,7 +24,10 @@ export default {
 
 <style>
 div > .homeBackground  {
-background-image: url("/images/MuddyWatersVinyl.jpg")
+background-image: url("/images/MuddyWatersVinyl.jpg");
+background-position: center center;
+background-repeat: no-repeat;
+height: 100vh;
 }
 header {
   display: flex;
@@ -36,7 +39,8 @@ img {
 }
 
 #headerText {
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");;
+  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  display: flex;
   font-family: 'Rubik', Calibri;
   color: white;
   text-shadow: -2px 2px 0 #000,

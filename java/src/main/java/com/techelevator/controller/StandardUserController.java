@@ -1,5 +1,6 @@
 package com.techelevator.controller;
 
+import com.techelevator.dao.StandardCollectionDao;
 import com.techelevator.dao.StandardUserDao;
 import com.techelevator.model.Album;
 
@@ -20,11 +21,7 @@ public class StandardUserController {
 
     private StandardUserDao standardUserDao;
 
-
-    public StandardUserController(StandardUserDao standardUserDao) {
-        this.standardUserDao = standardUserDao;
-
-    }
+    public StandardUserController(StandardUserDao standardUserDao) { this.standardUserDao = standardUserDao; }
 
 //    @RequestMapping(path = "/albums/{albumId}", method = RequestMethod.GET)
 //    public Album getAlbumByUserId(@RequestBody @PathVariable int albumId) {
