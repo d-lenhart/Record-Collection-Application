@@ -104,7 +104,7 @@ img {
 }
 
 #headerText {
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");;
+  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
   font-family: 'Rubik', Calibri;
   color: white;
   text-shadow: -2px 2px 0 #000,
@@ -113,7 +113,7 @@ img {
                -2px -2px 0 #000;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   border-radius: 20px;
 }
