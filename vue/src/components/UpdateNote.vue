@@ -5,13 +5,17 @@
 				<label for = "note">Notes</label>
 				<textarea id="note" name="note" rows="10" cols="50" v-model="album.notes"></textarea>
 			</div>
-			<button type = "submit">
-			<span id="content1">Update</span>
-            <span id="content2"></span>
-            <div class="inner-circle"></div>
-            <span id="content3"></span>
-            <span id="content4">Notes</span>
-			</button>
+			
+  <router-link class="router-link" :to="{ name: 'Library' }">
+    <button type="submit">
+      <span id="content1">Update</span>
+      <span id="content2"></span>
+      <div class="inner-circle"></div>
+      <span id="content3"></span>
+      <span id="content4">Notes</span>
+    </button>
+  </router-link>
+
 		</form>
   </div>
 </template>
@@ -84,6 +88,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.input {
+    font-size: 40px;
+    font-family: 'Rubik', Calibri;
+    color: white;
+    text-shadow: -2px 2px 0 #000,
+                2px 2px 0 #000,
+                2px -2px 0 #000,
+               -2px -2px 0 #000;
+               display: flex;
+               flex-direction: column;
+}
 
 </style>

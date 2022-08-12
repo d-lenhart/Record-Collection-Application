@@ -17,8 +17,16 @@
     <p>{{ album.releaseDate }}</p>
     <p>{{ album.playTime }}</p>
     <p>{{ album.notes }}</p>
-    <button>Update Notes</button>
-    <update-note v-if="condition" />
+    
+<router-link class="router-link" :to="{ name: 'update-note', params: {userId: this.userId, albumId: this.albumId} }">
+    <button>
+      <span id="content1">Update</span>
+      <span id="content2"></span>
+      <div class="inner-circle"></div>
+      <span id="content3"></span>
+      <span id="content4">Notes</span>
+    </button>
+  </router-link>
   
   </div>
 </div>
@@ -26,12 +34,8 @@
 </template>
 
 <script>
-import UpdateNote from '@/components/UpdateNote.vue'
 export default {
   name: "album-display",
-  components: {
-    UpdateNote
-  },
   props: ["album"],
   methods: {
     showForm() {
@@ -90,6 +94,7 @@ h3 {
   background-color: lightblue;
   border-radius: 15px;
 }
+
 button {
   font-size: 20px;
 
@@ -136,4 +141,9 @@ button {
     content: "\a";
     white-space: pre;
 }
+
+.router-link {
+  text-decoration: none;
+}
+
 </style>

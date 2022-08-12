@@ -11,7 +11,7 @@
     </header>
 </div>
   <div class="home">
-    <router-link v-bind:to="{name: 'Albums' }" v-if="$store.state.token != ''">Add an album to your library</router-link>
+    <router-link class="router-link" v-bind:to="{name: 'Albums' }" v-if="$store.state.token != ''">Add an album to your library</router-link>
   </div>
 </div>
 </template>
@@ -62,4 +62,12 @@ h1 {
                -2px -2px 0 #000;
 }
 
+.router-link {
+  font-size: 40px;
+  color: white;
+  text-shadow: -2px 2px 0 #000,
+                2px 2px 0 #000,
+                2px -2px 0 #000,
+               -2px -2px 0 #000;
+}
 </style>

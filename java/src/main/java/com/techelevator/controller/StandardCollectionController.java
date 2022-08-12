@@ -20,13 +20,23 @@ public class StandardCollectionController {
     public StandardCollectionController(StandardCollectionDao standardCollectionDao) {
         this.standardCollectionDao = standardCollectionDao; }
 
+    @RequestMapping(path = "/collections/{userId}", method = RequestMethod.GET)
+    public Collection getCollection(@PathVariable int userId, Principal user) {
+
+        String username = user.getName();
+        if (userId == this.standardCollectionDao.findIdByUsername(username)) {
+            return standardCollectionDao.getCollection(userId);
+        }
+        return null;
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/collections/{userId}", method = RequestMethod.POST)
     public Collection addCollection(@RequestBody Collection collection, @PathVariable int userId, Principal user) {
 
         String username = user.getName();
         if (userId == this.standardCollectionDao.findIdByUsername(username)) {
-            return standardCollectionDao.createCollection(collection);
+            return standardCollectionDao.createCollection(collection, userId);
         }
         return null;
     }

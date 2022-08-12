@@ -8,6 +8,6 @@ import java.util.List;
 public interface StandardCollectionDao {
 
     Collection getCollection(int collectionId);
-    Collection createCollection(Collection collection);
+    Collection createCollection(Collection collection, int userId);
     int findIdByUsername(String username);
 }

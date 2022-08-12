@@ -38,13 +38,14 @@ public class JdbcStandardCollectionDao implements StandardCollectionDao {
     }
 
     @Override
-    public Collection createCollection(Collection collection) {
+    public Collection createCollection(Collection collection, int userId) {
 
         String sql = "INSERT INTO collection(title, is_public, notes) " +
-                " VALUES (?, ?, ?) RETURNING collection_id;";
+                " VALUES (?, ?, ?) WHERE (SELECT user_id FROM users) = ? " +
+                " RETURNING collection_id;";
 
         Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, collection.getTitle(), collection.isPublic(),
-                collection.getNotes());
+                collection.getNotes(), userId);
 
 
         return getCollection(newId);
