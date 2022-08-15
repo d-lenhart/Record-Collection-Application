@@ -16,6 +16,10 @@ export default {
       headers: {
           'Content-Type': 'application/json',
       }});
+  },
+
+  addNewCollection(newCollection, userId) {
+    return axios.post('/collections/' + userId, newCollection);
   }
 
 /*   getMbid(title) {
