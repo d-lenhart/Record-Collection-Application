@@ -1,5 +1,5 @@
-<template>
-  <div id="add-record">
+<template>  
+  <div id="add-record">  
       <!--Need to access userId-->
       <form class="form-addRecord" v-on:submit.prevent="addRecord">
           <div class="input-line">
@@ -61,7 +61,8 @@ export default {
                 numberOfTracks: "",
                 /* mbid: "",
                 albumArt: "" */
-            }
+            },
+           
         }
     },
     //Need any props or "created()"?
@@ -121,19 +122,23 @@ export default {
 
 <style scoped>
 .form-addRecord {
-  font-size: 50px;
+    padding-top: 2%;
+  font-size: 42px;
+  font-family: "PT-Serif";
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   gap: 20px;
 }
 
-#add-record {
-  display: flex;
-  text-align: center;
-  justify-content: center;
+#add-record {  
+    height: 100vh;
+    background-size: cover;
+  background-image: url("/images/recordStack.jpg") ;
+
 }
+
 
 input[type=text] {
     font-size: 30px;
@@ -162,13 +167,13 @@ input[type=number] {
 .input-line {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     gap: 10px;
 }
 
 button {
   font-size: 20px;
-
+  margin-left: 10%;
   color: gold;
 
   background-color: #003;
@@ -212,4 +217,6 @@ button {
     content: "\a";
     white-space: pre;
 }
+
+
 </style>

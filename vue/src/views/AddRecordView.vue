@@ -1,19 +1,12 @@
-<template>
-<div>
+<template> 
 <div>
     <header>
-      <div id="headerImg">
-      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
-      </div>
-      <div id="headerText">
-        ADD RECORD TO YOUR LIBRARY
-      </div>
-    </header>
-</div>
-  <div>
+             Add a Record
+      </header> 
       <add-record />
   </div>
-</div>
+  
+
 </template>
 
 <script>
@@ -34,23 +27,25 @@ export default {
 header {
   display: flex;
   font-size: 60px;
+  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  background-size: cover;
+  background-position-y: 400px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  color: gold;
+  text-shadow: -3px 3px 0 maroon,
+                2px 2px 0 #000,
+                2px -2px 0 #000,
+               -2px -2px 0 #000;
+  height: 15vh;  
 }
+
 img {
   border-radius: 20px;
 }
 
-#headerText {
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");;
-  font-family: 'Rubik', Calibri;
-  color: white;
-  text-shadow: -2px 2px 0 #000,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 20px;
-}
+
+
 </style>

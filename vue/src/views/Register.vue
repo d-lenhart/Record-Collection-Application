@@ -2,11 +2,12 @@
 <div> 
   <div>
     <header>
-      <div id="headerImg">
-      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
-      </div>
+     
       <div id="headerText">
         A vinyl hub and forum for enthusiasts and historians of the Chicago music scene
+      </div>
+       <div id="headerImg">
+      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
       </div>
     </header>
 </div>
@@ -113,11 +114,10 @@ header {
 }
 img {
   border-radius: 20px;
+  height: 80%;
 }
 
 #headerText {
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");;
-  font-family: 'Rubik', Calibri;
   color: white;
   text-shadow: -2px 2px 0 #000,
                 2px 2px 0 #000,
@@ -142,6 +142,20 @@ img {
   display: flex;
   text-align: center;
   justify-content: center;
+  color: #000;
+  text-shadow: -2px 2px 0 #f8bd82,
+                2px 2px 0 #f8bd82,
+                2px -2px 0 #f8bd82,
+               -2px -2px 0 #f8bd82;
+               
+  
+  background-image: url(/images/LOUIS_ARMSTRONG_LOUIS+ARMSTRONG+AND+HIS+HOT+FIVE+NO.2-548158.jpg);
+  background-position: bottom;
+background-repeat: no-repeat;
+background-size: contain;
+background-color: rgb(247, 241, 230);
+height: 100vh;
+padding-top: 2%;
 }
 
 button {

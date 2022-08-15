@@ -1,7 +1,7 @@
 <template>
 <div class="library">
-    <header class="libraryHeader">
-        <h1>{{user.username}}'s Library</h1>
+    <header>
+        {{user.username}}'s Library
     </header>
      <album-display class="container"
       v-for="album in albums"
@@ -58,25 +58,31 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 div > .library {
     background-image: url("/images/record-shelf-vintage-vinyl-aa5f5bfe6ab88cb4c124cefdbd2c41e1.jpg");
     background-size: cover;
-    height: 100vh;
-    
-    
+    height: 100vh;  
 }
+
 .container {
     display: flex;
     flex-wrap: wrap;
     align-items: left;
     justify-content: left;
-    gap: 30px;
-    
+    gap: 30px;    
 }
 
-.libraryHeader {
-  display: flex;
+
+img {
+  border-radius: 20px;
+}
+
+
+
+header {
+  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");;
+  font-family: 'Rubik', Calibri;
   justify-content: center;
   font-size: 60px;
   color: gold;
@@ -84,31 +90,10 @@ div > .library {
                 2px 2px 0 #000,
                 2px -2px 0 #000,
                -2px -2px 0 #000;
-   padding-bottom: 2%;
-   background-color: #333333
-}
-
-img {
-  border-radius: 20px;
-}
-
-#nav {
-    padding-bottom:3%;
-}
-
-#headerText {
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");;
-  font-family: 'Rubik', Calibri;
-  color: white;
-  text-shadow: -2px 2px 0 #000,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 20px;
 }
 
 </style>

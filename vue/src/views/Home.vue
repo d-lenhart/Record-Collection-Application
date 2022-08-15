@@ -2,12 +2,8 @@
 <div class="homeBackground">
 <div>
     <header>
-      <div id="headerImg">
-      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
-      </div>
-      <div id="headerText">
-        A vinyl hub and forum for enthusiasts and historians of the Chicago music scene
-      </div>
+      A Hub for Enthusiasts of the Chicago Vinyl Scene
+      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />          
     </header>
 </div>
   <div class="home">
@@ -27,40 +23,32 @@ div > .homeBackground  {
 background-image: url("/images/MuddyWatersVinyl.jpg");
 background-position: center center;
 background-repeat: no-repeat;
+background-position-y: -85px;
 height: 100vh;
 }
 header {
   display: flex;
-  font-size: 40px;
-
-}
-img {
-  border-radius: 20px;
-}
-
-#headerText {
+  font-size: 60px;
   background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
-  display: flex;
-  font-family: 'Rubik', Calibri;
-  color: white;
-  text-shadow: -2px 2px 0 #000,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
+  background-size: cover;
+  background-position-y: 400px; 
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 20px;
-}
-
-h1 {
-  color: white;
-  text-shadow: -2px 2px 0 #000,
+  justify-content: space-between;  
+  color: gold;
+  text-shadow: -3px 3px 0 maroon,
                 2px 2px 0 #000,
                 2px -2px 0 #000,
                -2px -2px 0 #000;
+  height: 15vh;  
 }
+header > img {
+  border-radius: 40px;
+  height: 90%;
+  
+}
+
+
 
 .router-link {
   font-size: 40px;

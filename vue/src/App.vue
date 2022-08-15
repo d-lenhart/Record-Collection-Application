@@ -3,8 +3,8 @@
     <div id="nav">
       <router-link id="router-link" v-bind:to="{ name: 'home' }">Home</router-link> &nbsp;|
       <router-link id="router-link" v-bind:to="{ name: 'Library' }">My Library</router-link> &nbsp;|
-      <router-link id="router-link" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
-    </div>
+      <router-link id="router-link" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>       
+ </div>
     <router-view />
   </div>
 </template>
@@ -29,7 +29,10 @@ export default {
                 2px 2px 0 #000,
                 2px -2px 0 #000,
                -2px -2px 0 #000;
+
+  height: 0;
 }
+
 #router-link {
   color: gold;
   text-shadow: -3px 3px 0 maroon,
@@ -40,7 +43,7 @@ export default {
 
 #app {
   height: 100%;
-  font-family: 'Rubik', Calibri;
+  font-family: 'PT Serif'
 }
 
 </style>

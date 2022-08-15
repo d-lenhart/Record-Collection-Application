@@ -60,7 +60,7 @@ const router = new Router({
     {
       path: '/albums/:userId',
       name: 'Albums',
-      component: AddRecordView
+      component: AddRecordView,
     },
     {
       path: '/library/:userId',
