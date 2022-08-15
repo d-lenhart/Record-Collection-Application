@@ -3,10 +3,12 @@
     <header>
         {{user.username}}'s Library
     </header>
+    <div class="library-container">
      <album-display class="container"
       v-for="album in albums"
       v-bind:key="album.albumId"
       v-bind:album="album"/>
+    </div>
 </div>
 </template>
 
@@ -65,12 +67,14 @@ div > .library {
     height: 100vh;  
 }
 
+.library-container {
+    display: flex;
+    flex-wrap: wrap;
+}
 .container {
     display: flex;
     flex-wrap: wrap;
-    align-items: left;
-    justify-content: left;
-    gap: 30px;    
+    gap: 30px;   
 }
 
 
@@ -82,14 +86,15 @@ img {
 
 header {
   background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");;
-  font-family: 'Rubik', Calibri;
+  font-family: 'PT Serif', 'Rubik', Calibri;
   justify-content: center;
   font-size: 60px;
-  color: gold;
+  color: #eee;
   text-shadow: -3px 3px 0 maroon,
                 2px 2px 0 #000,
                 2px -2px 0 #000,
                -2px -2px 0 #000;
+  padding: 50px;
   display: flex;
   align-items: center;
   justify-content: center;

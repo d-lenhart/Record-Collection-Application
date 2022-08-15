@@ -19,13 +19,7 @@
     <p>{{ album.notes }}</p>
     
 <router-link class="router-link" :to="{ name: 'update-note', params: {userId: $store.state.user.id, albumId: album.albumId} }">
-    <button>
-      <span id="content1">Update</span>
-      <span id="content2"></span>
-      <div class="inner-circle"></div>
-      <span id="content3"></span>
-      <span id="content4">Notes</span>
-    </button>
+    <button>Update Notes</button>
   </router-link>
   
   </div>
@@ -69,26 +63,31 @@ time, mark, audio, video {
 }
 
 p {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
+  text-align: center;
 }
 
 .album-container {
+  height: 400px;
+  width: 300px;
   display: flex;
+  padding: 20px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
 .album {
+  height: 400px;
+  width: 300px;
   font-size: 40px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   background-color: lightblue;
@@ -96,18 +95,10 @@ h3 {
 }
 
 button {
-  font-size: 20px;
-
-  color: gold;
-
-  background-color: #003;
-  width: 150px;
-  height: 150px;
-  border-radius:100px;
-
-  font-family: 'Giveny', 'Rubik', Calibri;
-
-  border-color: grey;
+  font-family: 'PT Serif'; 
+  border-radius: 5px;
+  background-color: #cd7f32;
+  color: #eee;
 
   display: flex;
   flex-direction: column;
