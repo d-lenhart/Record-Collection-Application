@@ -169,7 +169,7 @@ button {
   height: 150px;
   border-radius:100px;
 
-  font-family: 'Giveny', 'Rubik', Calibri;
+  font-family: 'PT Serif', 'Rubik', Calibri;
 
   border-color: grey;
 

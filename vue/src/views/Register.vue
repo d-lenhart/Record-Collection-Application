@@ -44,7 +44,7 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
+      <router-link class="router-link" :to="{ name: 'login' }">Have an account?</router-link>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         <span id="content1">Create</span>
         <span id="content2"></span>
@@ -119,6 +119,7 @@ img {
 
 #headerText {
   color: white;
+  font-family: 'PT Serif';
   text-shadow: -2px 2px 0 #000,
                 2px 2px 0 #000,
                 2px -2px 0 #000,
@@ -168,7 +169,7 @@ button {
   height: 150px;
   border-radius:100px;
 
-  font-family: 'Rubik', Calibri;
+  font-family: 'PT Serif', 'Rubik', Calibri;
 
   border-color: grey;
 
@@ -215,5 +216,13 @@ input[type=password] {
 #content3::after{
     content: "\a";
     white-space: pre;
+}
+
+.router-link {
+  color: #cd7f32;
+  text-shadow: -2px 2px 0 #000,
+                2px 2px 0 #000,
+                2px -2px 0 #000,
+               -2px -2px 0 #000;
 }
 </style>
