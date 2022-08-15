@@ -44,7 +44,7 @@ public class JdbcStandardCollectionDao implements StandardCollectionDao {
                 " VALUES (?, ?, ?, ?) " +
                 " RETURNING collection_id;";
 
-        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, userId, collection.getTitle(), collection.isPublic(),
+        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, userId, collection.getTitle(), collection.isPublicFlag(),
                 collection.getNotes());
 
 
@@ -89,7 +89,7 @@ public class JdbcStandardCollectionDao implements StandardCollectionDao {
 
         collection.setCollectionId(rowSet.getInt("collection_id"));
         collection.setTitle(rowSet.getString("title"));
-        collection.setPublic(rowSet.getBoolean("is_public"));
+        collection.setPublicFlag(rowSet.getBoolean("is_public"));
         if (rowSet.getString("notes") != null) {
             collection.setNotes(rowSet.getString("notes"));
         }
