@@ -9,6 +9,8 @@ public interface StandardCollectionDao {
 
     Collection getCollection(int collectionId, int userId);
 
+    List<Collection> getAllCollections(int userId);
+
     void addToCollection(int albumId, int collectionId);
 
     Collection createCollection(Collection collection, int userId);

@@ -15,7 +15,7 @@
 <script>
 import recordService from "@/services/RecordService.js";
 
-import AlbumDisplay from "./AlbumDisplay.vue"
+import AlbumDisplay from "./AlbumDisplay.vue";
 
 export default {
     name: 'show-library',
@@ -51,10 +51,9 @@ export default {
                 response => {
                    this.albums = response.data;
                 }
-            )
+            )            
+        },
 
-            
-        }
     }
 
 }

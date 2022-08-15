@@ -20,6 +20,10 @@ export default {
 
   addNewCollection(newCollection, userId) {
     return axios.post('/collections/' + userId, newCollection);
+  },
+
+  getCollections(userId) {
+    return axios.get('/collections/' + userId + '/')
   }
 
 /*   getMbid(title) {

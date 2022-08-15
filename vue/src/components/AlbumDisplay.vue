@@ -21,6 +21,10 @@
 <router-link class="router-link" :to="{ name: 'update-note', params: {userId: $store.state.user.id, albumId: album.albumId} }">
     <button>Update Notes</button>
   </router-link>
+  <p>Add to Collection: </p>
+  <select id = "collectionsDropDownList">
+    <option v-for="collection in collections" v-bind:key="collection.collectionId" v-bind:value="collection">{{collection.title}}</option>
+  </select>
   
   </div>
 </div>
@@ -28,13 +32,37 @@
 </template>
 
 <script>
+import recordService from "@/services/RecordService.js"
+
 export default {
   name: "album-display",
   props: ["album"],
+  data() {
+      return {
+        collection: {
+                userId: this.$store.state.user.id,
+                title: "",
+                isPublic: "",
+                notes: "",
+                collectionId: ""
+            },
+        collections: []
+      }
+  },
+  created() {
+    this.loadCollections();
+  },
   methods: {
     showForm() {
 
-    }
+    },
+    loadCollections(){
+        recordService.getCollections(this.$store.state.user.id).then(
+          response => {
+            this.collections = response.data;
+          }
+        )
+    },
   }
 
 };

@@ -33,10 +33,11 @@ export default {
         return {
             errorMsg: "",
             collection: {
-                userId: this.$store.state.user,
+                userId: this.$store.state.user.id,
                 title: "",
                 isPublic: "",
                 notes: "",
+                collectionId: ""
             }
         }
     },
@@ -46,7 +47,8 @@ export default {
                 userId : this.$store.state.user.id,
                 title: this.collection.title,
                 publicFlag: this.collection.isPublic,
-                notes: this.collection.notes
+                notes: this.collection.notes,
+                collectionId: this.collection.collectionId
             }
             recordService.addNewCollection(newCollection, this.$store.state.user.id).then(
                 () => {

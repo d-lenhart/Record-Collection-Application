@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
+
 import com.techelevator.controller.StandardUserController;
 
 import javax.validation.Valid;
@@ -32,7 +34,15 @@ public class StandardCollectionController {
         }
         return null;
     }
+    @RequestMapping(path = "/collections/{userId}/", method = RequestMethod.GET)
+    public List<Collection> getAllCollections(@PathVariable int userId, Principal user) {
 
+        String username = user.getName();
+        if (userId == this.standardCollectionDao.findIdByUsername(username)) {
+            return standardCollectionDao.getAllCollections(userId);
+        }
+        return null;
+    }
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/collections/{userId}", method = RequestMethod.POST)
