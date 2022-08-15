@@ -95,6 +95,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 header {
   display: flex;
   font-size: 40px;
@@ -135,6 +137,12 @@ img {
                 2px 2px 0 #f8bd82,
                 2px -2px 0 #f8bd82,
                -2px -2px 0 #f8bd82;
+               
+  
+  background-image: url(/images/LOUIS_ARMSTRONG_LOUIS+ARMSTRONG+AND+HIS+HOT+FIVE+NO.2-548158.jpg);
+  background-position: bottom;
+background-repeat: no-repeat;
+background-size: 35%;
 }
 
 input[type=text] {
