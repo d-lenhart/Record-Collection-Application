@@ -77,8 +77,8 @@ public class JdbcStandardCollectionDao implements StandardCollectionDao {
 
 
         String sql2 ="DELETE FROM collection " +
-                "WHERE collection_id = ? ;";
-        jdbcTemplate.update(sql2, collectionId);
+                "WHERE user_id = ? AND collection_id = ?;";
+        jdbcTemplate.update(sql2, userId, collectionId);
 
 
 
