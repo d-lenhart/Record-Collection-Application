@@ -88,13 +88,16 @@ public class JdbcStandardUserDao implements StandardUserDao{
     @Override
     public void deleteAlbum(int userId, int albumId){
 
-       /* String sql ="DELETE FROM collection " +
-                "WHERE user_id = ? ;";
-        jdbcTemplate.update(sql, userId); */
-
-        String sql2 ="DELETE FROM album_library " +
+        String sql ="DELETE FROM album_library " +
                 "WHERE user_id = ? AND album_id = ? ;";
-        jdbcTemplate.update(sql2, userId, albumId);
+        jdbcTemplate.update(sql, userId, albumId);
+
+
+       String sql2 ="DELETE FROM album_collection " +
+                "WHERE album_id = ? ;";
+        jdbcTemplate.update(sql2, albumId);
+
+
 
     }
 

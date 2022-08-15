@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.security.Principal;
 import com.techelevator.controller.StandardUserController;
 
+import javax.validation.Valid;
+
 @RestController
 @CrossOrigin
 public class StandardCollectionController {
@@ -18,7 +20,8 @@ public class StandardCollectionController {
     private StandardUserDao standardUserDao;
 
     public StandardCollectionController(StandardCollectionDao standardCollectionDao) {
-        this.standardCollectionDao = standardCollectionDao; }
+        this.standardCollectionDao = standardCollectionDao;
+    }
 
     @RequestMapping(path = "/collections/{userId}/{collectionId}", method = RequestMethod.GET)
     public Collection getCollection(@PathVariable int userId, @PathVariable int collectionId, Principal user) {
@@ -41,6 +44,13 @@ public class StandardCollectionController {
         return null;
     }
 
+    @RequestMapping(path = "/collections/{userId}/delete/{collectionId}", method = RequestMethod.DELETE)
+    public void deleteCollection(@Valid @PathVariable int userId, @Valid @PathVariable int collectionId, Principal user) {
+        String username = user.getName();
+        if (userId == this.standardCollectionDao.findIdByUsername(username)) {
+            standardCollectionDao.deleteCollection(userId, collectionId);
+        }
+
    /* @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/albums/{userId}", method = RequestMethod.POST)
     public Album addAlbum(@RequestBody Album album, @PathVariable int userId, Principal user) {
@@ -51,4 +61,6 @@ public class StandardCollectionController {
         }
         return null;
     }*/
+    }
 }
+

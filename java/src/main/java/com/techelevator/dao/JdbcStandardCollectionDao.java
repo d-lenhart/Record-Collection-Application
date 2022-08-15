@@ -66,6 +66,24 @@ public class JdbcStandardCollectionDao implements StandardCollectionDao {
         return userId;
     }
 
+
+
+    @Override
+    public void deleteCollection(int userId, int collectionId){
+
+        String sql ="DELETE FROM album_collection " +
+                "WHERE collection_id = ? ;";
+        jdbcTemplate.update(sql, collectionId);
+
+
+        String sql2 ="DELETE FROM collection " +
+                "WHERE collection_id = ? ;";
+        jdbcTemplate.update(sql2, collectionId);
+
+
+
+    }
+
     private Collection mapRowToCollection(SqlRowSet rowSet) {
         Collection collection = new Collection();
 
