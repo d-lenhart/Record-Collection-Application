@@ -11,7 +11,7 @@
           </div>
           <div class="input-line">
               <label for="">COLLECTION NOTES</label> &nbsp;
-              <input type="text" id="collectionNotes" v-model="collection.notes" />
+              <input type="text" id="collectionNotes" v-model="collection.notes " />
           </div>
           <button type = "submit">
             <span id="content1">Add</span>
@@ -35,7 +35,7 @@ export default {
             collection: {
                 userId: this.$store.state.user,
                 title: "",
-                isPublic: false,
+                isPublic: "",
                 notes: "",
             }
         }
@@ -45,7 +45,7 @@ export default {
             const newCollection = {
                 userId : this.$store.state.user.id,
                 title: this.collection.title,
-                isPublic: this.collection.isPublic,
+                publicFlag: this.collection.isPublic,
                 notes: this.collection.notes
             }
             recordService.addNewCollection(newCollection, this.$store.state.user.id).then(
@@ -67,11 +67,14 @@ export default {
             this.displayMessage("Your collection has been created!");
             },
         resetForm() {
-            this.album = {};
+            this.collection = {};
         },
         displayMessage(message) {
             alert(message);
         },
+        // setPublic() {
+        //     this.collection.isPublic = !this.collection.isPublic;
+        // }
         
     }
 }
