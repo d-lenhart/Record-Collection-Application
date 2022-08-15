@@ -3,17 +3,14 @@
       <form class = "form-update-note" v-on:submit.prevent="updateNote">
 			<div class = "input">
 				<label for = "note">Notes</label>
-				<textarea id="note" name="note" rows="10" cols="50" v-model="album.notes"></textarea>
+				<textarea id="note" name="note" rows="12" cols="40" v-model="album.notes"></textarea>
 			</div>
 			
-  
+  <div class="update-button">
     <button type="submit">
-      <span id="content1">Update</span>
-      <span id="content2"></span>
-      <div class="inner-circle"></div>
-      <span id="content3"></span>
-      <span id="content4">Notes</span>
+      Update Notes
     </button>
+  </div>
   
 
 		</form>
@@ -89,6 +86,44 @@ export default {
 </script>
 
 <style scoped>
+#update-note {
+    background-image: url("/images/chicago-transit-authority-rhino-cd.jpg");
+     background-position: bottom;
+background-repeat: no-repeat;
+background-size: contain;
+background-color: rgb(247, 241, 230);
+height: 100vh;
+padding-top: 2%;
+
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+label { 
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+textarea {
+    margin-bottom: 120px;
+    border-width: 10px;
+    border-color: #777789;
+    font-size: 25px;
+}
+
+.update-button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    height: 60px;
+    width: 180px;
+    font-size: 25px;
+    border-radius: 10px;
+    border-color: gold;
+}
 .input {
     font-size: 40px;
     font-family: 'Rubik', Calibri;
