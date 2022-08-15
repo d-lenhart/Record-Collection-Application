@@ -33,15 +33,36 @@ public class StandardCollectionController {
         return null;
     }
 
+
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/collections/{userId}", method = RequestMethod.POST)
-    public Collection addCollection(@RequestBody Collection collection, @PathVariable int userId, Principal user) {
+    public Collection createCollection(@RequestBody Collection collection, @PathVariable int userId, Principal user) {
 
         String username = user.getName();
         if (userId == this.standardCollectionDao.findIdByUsername(username)) {
             return standardCollectionDao.createCollection(collection, userId);
         }
         return null;
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(path = "/collections/{userId}/{collectionId}/{albumId}", method = RequestMethod.GET)
+    public void addToCollection( @PathVariable int userId, @PathVariable int collectionId, @PathVariable int albumId, Principal user) {
+
+        String username = user.getName();
+        if (userId == this.standardCollectionDao.findIdByUsername(username)) {
+            standardCollectionDao.addToCollection(albumId, collectionId);
+        }
+
+    }
+    @RequestMapping(path = "/collections/{userId}/delete/{collectionId}/{albumId}", method = RequestMethod.DELETE)
+    public void deleteAlbumFromCollection( @PathVariable int userId, @PathVariable int collectionId, @PathVariable int albumId, Principal user) {
+
+        String username = user.getName();
+        if (userId == this.standardCollectionDao.findIdByUsername(username)) {
+            standardCollectionDao.deleteAlbumFromCollection(albumId, collectionId);
+        }
+
     }
 
     @RequestMapping(path = "/collections/{userId}/delete/{collectionId}", method = RequestMethod.DELETE)

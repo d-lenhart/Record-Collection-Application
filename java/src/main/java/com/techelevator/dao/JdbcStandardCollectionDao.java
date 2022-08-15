@@ -1,6 +1,5 @@
 package com.techelevator.dao;
 
-import com.techelevator.model.Album;
 import com.techelevator.model.Collection;
 import com.techelevator.model.UserNotFoundException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -9,7 +8,6 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
-import java.util.List;
 
 @Component
 public class JdbcStandardCollectionDao implements StandardCollectionDao {
@@ -35,6 +33,16 @@ public class JdbcStandardCollectionDao implements StandardCollectionDao {
         }
 
         return collection;
+    }
+
+    @Override
+    public void addToCollection(int albumId, int collectionId) {
+        String sql = "INSERT INTO album_collection(album_id, collection_id) " +
+                "VALUES (?, ?) returning collection_id";
+
+        jdbcTemplate.queryForRowSet(sql, albumId, collectionId);
+
+
     }
 
     @Override
@@ -80,7 +88,15 @@ public class JdbcStandardCollectionDao implements StandardCollectionDao {
                 "WHERE user_id = ? AND collection_id = ?;";
         jdbcTemplate.update(sql2, userId, collectionId);
 
+    }
 
+    @Override
+    public void deleteAlbumFromCollection(int albumId, int collectionId){
+
+        String sql ="DELETE FROM album_collection " +
+                "WHERE album_id = ? AND collection_id = ? ;";
+
+        jdbcTemplate.update(sql, albumId, collectionId);
 
     }
 
