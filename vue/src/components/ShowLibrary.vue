@@ -87,14 +87,13 @@ img {
 header {
   background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");;
   font-family: 'PT Serif', 'Rubik', Calibri;
-  justify-content: center;
   font-size: 60px;
   color: #eee;
-  text-shadow: -3px 3px 0 maroon,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
-  padding: 50px;
+  text-shadow: -1px 1px 0 black,
+                1px 1px 0 maroon,
+                1px -1px 0 maroon,
+               -1px -1px 0 maroon;
+  height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
