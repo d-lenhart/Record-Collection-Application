@@ -3,6 +3,7 @@
     <div id="nav">
       <router-link id="router-link" v-bind:to="{ name: 'home' }">Home</router-link> &nbsp;|
       <router-link id="router-link" v-bind:to="{ name: 'Library' }">My Library</router-link> &nbsp;|
+      <router-link id="router-link" v-bind:to="{ name: 'my-collections' }">My Collections</router-link> &nbsp; |
       <router-link id="router-link" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
     </div>
     <router-view />
