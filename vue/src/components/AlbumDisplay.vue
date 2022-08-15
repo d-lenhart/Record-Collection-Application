@@ -11,12 +11,12 @@
       </div>
   <div class="album" v-bind:key="album.albumId">
     <h3>{{ album.title }}</h3>
-    <p>{{ album.artist }}</p>
-    <p>{{ album.genre }}</p>
-    <p>{{ album.numberOfTracks }}</p>
-    <p>{{ album.releaseDate }}</p>
-    <p>{{ album.playTime }}</p>
-    <p>{{ album.notes }}</p>
+    <p><u>Artist</u>: {{ album.artist }}</p>
+    <p><u>Genre</u>: {{ album.genre }}</p>
+    <p><u>Number of Tracks</u>: {{ album.numberOfTracks }}</p>
+    <p><u>Release Date</u>: {{ album.releaseDate }}</p>
+    <p><u>Length</u>: {{ album.playTime }}</p>
+    <p><u>Notes</u>: {{ album.notes }}</p>
     
 <router-link class="router-link" :to="{ name: 'update-note', params: {userId: $store.state.user.id, albumId: album.albumId} }">
     <button>Update Notes</button>
@@ -63,11 +63,11 @@ time, mark, audio, video {
 }
 
 p {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 h3 {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   text-align: center;
 }
@@ -85,7 +85,6 @@ h3 {
 .album {
   height: 400px;
   width: 300px;
-  font-size: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;

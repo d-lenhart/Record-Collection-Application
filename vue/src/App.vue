@@ -25,21 +25,21 @@ export default {
 
 #nav {
   font-size: 40px;
-  color: white;
-  text-shadow: -2px 2px 0 #000,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
+  color: #eee;
+  text-shadow: -1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
 
   height: 0;
 }
 
 #router-link {
   color: gold;
-  text-shadow: -3px 3px 0 maroon,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
+  text-shadow: -1px 1px 0 maroon,
+                1px 1px 0 maroon,
+                1px -1px 0 maroon,
+               -1px -1px 0 maroon;
 }
 
 #app {
