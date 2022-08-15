@@ -21,6 +21,7 @@ export default {
 </script>
 
 <style scoped>
+
 #nav {
   font-size: 40px;
   color: white;
