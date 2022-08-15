@@ -9,6 +9,7 @@ import AddRecordView from '../views/AddRecordView.vue'
 import ShowLibrary from '../components/ShowLibrary.vue'
 import UpdateNote from '../components/UpdateNote.vue'
 import AddCollection from '../components/AddCollection'
+import MyCollectionView from '../views/MyCollectionView.vue'
 
 Vue.use(Router)
 
@@ -76,6 +77,11 @@ const router = new Router({
       path: '/collections/:userId',
       name: 'add-collection',
       component: AddCollection
+    },
+    {
+      path: '/my-collections/:userId',
+      name: 'my-collections',
+      component: MyCollectionView
     }
   ]
 })

@@ -2,15 +2,15 @@
   <div id = "add-collection">
       <form class = "form-add-collection" v-on:submit.prevent="addCollection">
           <div class="input-line">
-              <label for="">Collection Title</label> &nbsp;
+              <label for="">COLLECTION TITLE</label> &nbsp;
               <input type="text" id="collectionTitle" v-model="collection.title" />
           </div>
           <div class="input-line">
-              <label for="">Is this a public collection?</label> &nbsp;
+              <label for="">IS THIS A PUBLIC COLLECTION?</label> &nbsp;
               <input type="checkbox" id="collectionIsPublic" v-model="collection.isPublic" />
           </div>
           <div class="input-line">
-              <label for="">Collection Notes</label> &nbsp;
+              <label for="">COLLECTION NOTES</label> &nbsp;
               <input type="text" id="collectionNotes" v-model="collection.notes" />
           </div>
           <button type = "submit">
@@ -50,7 +50,7 @@ export default {
             }
             recordService.addNewCollection(newCollection, this.$store.state.user.id).then(
                 () => {
-                    this.$router.push({name: "add-collection"})
+                    this.$router.push({name: "my-collections"})
                 }
             ).catch(
                 error => {
@@ -78,5 +78,36 @@ export default {
 </script>
 
 <style>
+.form-add-collection {
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 
+#add-collection {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+input[type=text] {
+    font-size: 30px;
+    text-align: center;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+}
+.input-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+label {
+    color: white;
+    font-family: 'PT Serif'
+}
 </style>
