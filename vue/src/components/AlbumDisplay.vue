@@ -18,7 +18,7 @@
     <p>{{ album.playTime }}</p>
     <p>{{ album.notes }}</p>
     
-<router-link class="router-link" :to="{ name: 'update-note', params: {userId: this.userId, albumId: this.albumId} }">
+<router-link class="router-link" :to="{ name: 'update-note', params: {userId: $store.state.user.id, albumId: album.albumId} }">
     <button>
       <span id="content1">Update</span>
       <span id="content2"></span>

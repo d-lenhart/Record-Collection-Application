@@ -6,7 +6,7 @@
 				<textarea id="note" name="note" rows="10" cols="50" v-model="album.notes"></textarea>
 			</div>
 			
-  <router-link class="router-link" :to="{ name: 'Library' }">
+  
     <button type="submit">
       <span id="content1">Update</span>
       <span id="content2"></span>
@@ -14,7 +14,7 @@
       <span id="content3"></span>
       <span id="content4">Notes</span>
     </button>
-  </router-link>
+  
 
 		</form>
   </div>
@@ -44,7 +44,7 @@ export default {
     methods: {
         updateNote() {
             // const updatedNote = this.album.notes;
-
+                console.log("Updating");
               const updatedAlbum = {
                   userId : this.$store.state.user.id,
                   albumId: this.$route.params.albumId,
@@ -60,7 +60,7 @@ export default {
 
             recordService.updateNote(updatedAlbum.notes, this.$store.state.user.id, albumId).then(
                 () => {
-                    this.$router.commit({name: "update-note"});
+                    this.$router.push({name: "Library"});
                 }
             ).catch(
                 error => {
@@ -74,7 +74,7 @@ export default {
                 }
             );
             this.resetForm();
-            this.displayMessage("Your notes have been updated!")
+            this.displayMessage("Your notes have been updated!");
         },
         resetForm() {
             this.album = {};

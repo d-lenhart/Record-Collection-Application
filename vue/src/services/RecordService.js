@@ -11,6 +11,7 @@ export default {
   },
 
   updateNote(updatedNote, userId, albumId) {
+    console.log(userId + "/ " + albumId)
     return axios.put('/albums/' + userId + '/' + albumId, updatedNote, {
       headers: {
           'Content-Type': 'application/json',
