@@ -30,10 +30,12 @@ CREATE TABLE album_library (
 
 CREATE TABLE collection (
     collection_id SERIAL,
+    user_id int,
     title varchar(200) NOT NULL,
     is_public boolean,
     notes varchar(10000),
-    CONSTRAINT PK_collection PRIMARY KEY(collection_id)
+    CONSTRAINT PK_collection PRIMARY KEY(collection_id),
+    CONSTRAINT FK_user_id FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
 CREATE TABLE album_collection (

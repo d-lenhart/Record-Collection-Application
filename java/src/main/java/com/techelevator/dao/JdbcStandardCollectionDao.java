@@ -21,14 +21,14 @@ public class JdbcStandardCollectionDao implements StandardCollectionDao {
 
 
     @Override
-    public Collection getCollection(int collectionId) {
+    public Collection getCollection(int collectionId, int userId) {
         Collection collection = null;
 
         String sql = "SELECT * " +
                 "FROM collection " +
-                "WHERE collection_id = ? ;";
+                "WHERE collection_id = ? AND user_id = ? ;";
 
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, collectionId);
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, collectionId, userId);
 
         if(results.next()) {
             collection = mapRowToCollection(results);
@@ -40,15 +40,15 @@ public class JdbcStandardCollectionDao implements StandardCollectionDao {
     @Override
     public Collection createCollection(Collection collection, int userId) {
 
-        String sql = "INSERT INTO collection(title, is_public, notes) " +
-                " VALUES (?, ?, ?) WHERE (SELECT user_id FROM users) = ? " +
+        String sql = "INSERT INTO collection(user_id, title, is_public, notes) " +
+                " VALUES (?, ?, ?, ?) " +
                 " RETURNING collection_id;";
 
-        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, collection.getTitle(), collection.isPublic(),
-                collection.getNotes(), userId);
+        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, userId, collection.getTitle(), collection.isPublic(),
+                collection.getNotes());
 
 
-        return getCollection(newId);
+        return getCollection(newId, userId);
 
     }
 

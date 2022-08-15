@@ -20,12 +20,12 @@ public class StandardCollectionController {
     public StandardCollectionController(StandardCollectionDao standardCollectionDao) {
         this.standardCollectionDao = standardCollectionDao; }
 
-    @RequestMapping(path = "/collections/{userId}", method = RequestMethod.GET)
-    public Collection getCollection(@PathVariable int userId, Principal user) {
+    @RequestMapping(path = "/collections/{userId}/{collectionId}", method = RequestMethod.GET)
+    public Collection getCollection(@PathVariable int userId, @PathVariable int collectionId, Principal user) {
 
         String username = user.getName();
         if (userId == this.standardCollectionDao.findIdByUsername(username)) {
-            return standardCollectionDao.getCollection(userId);
+            return standardCollectionDao.getCollection(collectionId, userId);
         }
         return null;
     }
