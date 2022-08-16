@@ -5,7 +5,9 @@
       A Hub for Enthusiasts of the Chicago Vinyl Scene
       <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />          
     </header>
+    <div class="home-container">
     <router-link class="router-link" v-bind:to="{name: 'Albums' }" v-if="$store.state.token != ''">Add an album to your library</router-link>
+    </div>
   </div>
 </div>
 </template>
@@ -56,9 +58,10 @@ header > img {
 .router-link {
   font-size: 40px;
   color: white;
-  text-shadow: -2px 2px 0 #000,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
+  text-shadow: -1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
+  text-decoration: underline;
 }
 </style>

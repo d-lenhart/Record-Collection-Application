@@ -10,6 +10,7 @@ import ShowLibrary from '../components/ShowLibrary.vue'
 import UpdateNote from '../components/UpdateNote.vue'
 import AddCollection from '../components/AddCollection'
 import MyCollectionView from '../views/MyCollectionView.vue'
+import DeleteRecord from '../components/DeleteRecord.vue'
 
 Vue.use(Router)
 
@@ -82,6 +83,11 @@ const router = new Router({
       path: '/my-collections/:userId',
       name: 'my-collections',
       component: MyCollectionView
+    },
+    {
+      path: '/delete',
+      name: 'delete-record',
+      component: DeleteRecord
     }
   ]
 })

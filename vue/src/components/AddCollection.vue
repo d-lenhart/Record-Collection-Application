@@ -42,7 +42,7 @@ export default {
         }
     },
     methods: {
-        addCollection() {
+        createCollection() {
             const newCollection = {
                 userId : this.$store.state.user.id,
                 title: this.collection.title,
@@ -50,7 +50,7 @@ export default {
                 notes: this.collection.notes,
                 collectionId: this.collection.collectionId
             }
-            recordService.addNewCollection(newCollection, this.$store.state.user.id).then(
+            recordService.createNewCollection(newCollection, this.$store.state.user.id).then(
                 () => {
                     this.$router.push({name: "my-collections"})
                 }

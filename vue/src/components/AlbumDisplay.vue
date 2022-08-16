@@ -18,6 +18,7 @@
     <p><u>Length</u>: {{ album.playTime }}</p>
     <p><u>Notes</u>: {{ album.notes }}</p>
     
+    
 <router-link class="router-link" :to="{ name: 'update-note', params: {userId: $store.state.user.id, albumId: album.albumId} }">
     <button>Update Notes</button>
   </router-link>
@@ -25,7 +26,12 @@
   <select id = "collectionsDropDownList">
     <option v-for="collection in collections" v-bind:key="collection.collectionId" v-bind:value="collection">{{collection.title}}</option>
   </select>
-  
+  <router-link v-bind:to="{name: 'delete-record', params: {albumId: album.albumId}}">
+  <button class="delete-button">
+    DELETE RECORD
+  </button>
+  </router-link>
+    
   </div>
 </div>
 </div>
@@ -33,10 +39,13 @@
 
 <script>
 import recordService from "@/services/RecordService.js"
+import DeleteRecord from '@/components/DeleteRecord.vue';
 
 export default {
   name: "album-display",
-  props: ["album"],
+  props: [
+    DeleteRecord,
+    "album"],
   data() {
       return {
         collection: {
@@ -162,6 +171,10 @@ button {
 
 .router-link {
   text-decoration: none;
+}
+
+.delete-button {
+  background-color: red;
 }
 
 </style>

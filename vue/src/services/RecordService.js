@@ -18,7 +18,11 @@ export default {
       }});
   },
 
-  addNewCollection(newCollection, userId) {
+  deleteRecord(userId, albumId) {
+    return axios.delete("/albums/" + userId + "/" + albumId);
+  },
+
+  createNewCollection(newCollection, userId) {
     return axios.post('/collections/' + userId, newCollection);
   },
 

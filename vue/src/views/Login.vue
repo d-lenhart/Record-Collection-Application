@@ -2,7 +2,12 @@
 <div> 
   <div>
     <header>
-      
+      <div id="headerText">
+        A vinyl hub and forum for enthusiasts and historians of the Chicago music scene
+      </div>
+       <div id="headerImg">
+      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
+      </div>
     </header>
 </div> 
   <div id="login" class="text-center">
@@ -93,26 +98,28 @@ export default {
 
 
 header {
+  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
   display: flex;
-  font-size: 40px;
+  height: 25vh;
 }
 img {
   border-radius: 20px;
 }
 
 #headerText {
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
-  font-family: 'Rubik', Calibri;
-  color: white;
-  text-shadow: -2px 2px 0 #000,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
+  font-size: 3vw;
+  font-family: 'PT Serif', 'Rubik', Calibri;
+  color: #eee;
+  text-shadow: -1px 1px 0 maroon,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-align: center;
   border-radius: 20px;
+  margin-top: 50px;
 }
 
 .form-signin {
@@ -128,10 +135,10 @@ img {
   text-align: center;
   justify-content: center;
   color: #000;
-  text-shadow: -2px 2px 0 #f8bd82,
-                2px 2px 0 #f8bd82,
-                2px -2px 0 #f8bd82,
-               -2px -2px 0 #f8bd82;
+  text-shadow: -1px 1px 0 #413122,
+                1px 1px 0 #413122,
+                1px -1px 0 #413122,
+               -1px -1px 0 #413122;
                
   
   background-image: url(/images/LOUIS_ARMSTRONG_LOUIS+ARMSTRONG+AND+HIS+HOT+FIVE+NO.2-548158.jpg);
@@ -208,9 +215,9 @@ button {
 
 .router-link {
   color: #cd7f32;
-  text-shadow: -2px 2px 0 #000,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
+  text-shadow: -1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
 }
 </style>
