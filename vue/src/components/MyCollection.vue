@@ -1,21 +1,73 @@
 <template>
-  <div id="nav">
-      <router-link id="router-link" v-bind:to="{ name: 'add-collection' }">
-        <div id="new-collection-text">
-          ADD A NEW COLLECTION
-        </div>
-      </router-link>
+  <div>
+    <div id="nav">
+        <router-link id="router-link" v-bind:to="{ name: 'add-collection' }">
+            <div id="new-collection-text">
+             ADD A NEW COLLECTION
+            </div>
+        </router-link>
+    </div>
+    <div id="collection-display-container">
+        <p>Does this div even exist??</p>
+        <collection-display class="container"
+            v-for="collection in collections" 
+            v-bind:key="collection.collectionId" 
+            v-bind:collection="collection" />
+    </div>
   </div>
 </template>
 
 <script>
+import recordService from '@/services/RecordService.js'
+import collectionDisplay from '@/components/CollectionDisplay.vue'
 export default {
+    name: 'my-collection',
+    components: {
+        collectionDisplay
+    },
+     data() {
+      return {
+        collection: {
+                userId: this.$store.state.user.id,
+                title: "",
+                isPublic: "",
+                notes: "",
+                collectionId: ""
+            },
+        collections: [],
+        user: {
+            username: this.$store.state.user.username
+        },
+        errorMsg: ""
+      }
+  },
+  created() {
+        this.loadCollections();
+    },
+  methods: {
 
+        loadCollections() {
+            recordService.getCollections(this.$store.state.user.id).then(
+                response => {
+                   this.collections = response.data;
+                }
+            )            
+        },
+
+    
+  }
 }
 </script>
 
 <style>
 #nav {
+    color: white;
+}
+#collection-display-container {
+    color: white;
+}
+
+.container {
     color: white;
 }
 
