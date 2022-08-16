@@ -1,9 +1,11 @@
 <template>
 <div> 
-  <div>
+  <div class="header-container">
     <header>
+      <div id="header-text-container">
       <div id="headerText">
         A vinyl hub and forum for enthusiasts and historians of the Chicago music scene
+      </div>
       </div>
        <div id="headerImg">
       <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
@@ -99,15 +101,23 @@ export default {
 
 header {
   background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
-  display: flex;
-  height: 25vh;
+  
+  height: 18vh;
 }
+
 img {
-  border-radius: 20px;
+  border-radius: 40px;
+  height: 20%;
+  margin-left: 750px;
+  position: fixed;
+}
+
+.header-container {
+  text-align: center;
 }
 
 #headerText {
-  font-size: 3vw;
+  font-size: 45px;
   font-family: 'PT Serif', 'Rubik', Calibri;
   color: #eee;
   text-shadow: -1px 1px 0 maroon,
@@ -119,7 +129,14 @@ img {
   justify-content: space-between;
   text-align: center;
   border-radius: 20px;
-  margin-top: 50px;
+  margin-top: 45px;
+  position: static;
+}
+
+#header-text-container {
+  height: 100px;
+  width: 1800px;
+  position: fixed;
 }
 
 .form-signin {
@@ -135,7 +152,7 @@ img {
   text-align: center;
   justify-content: center;
   color: #000;
-  text-shadow: -1px 1px 0 #413122,
+  text-shadow: -1px 1px 0 silver,
                 1px 1px 0 #413122,
                 1px -1px 0 #413122,
                -1px -1px 0 #413122;
@@ -214,10 +231,16 @@ button {
 }
 
 .router-link {
-  color: #cd7f32;
-  text-shadow: -1px 1px 0 #000,
+  color: silver;
+  text-shadow: -1px 1px 0 #cd7f32,
                 1px 1px 0 #000,
                 1px -1px 0 #000,
                -1px -1px 0 #000;
+               background: navy;
+}
+
+.sr-only {
+  background: navy;
+  border-radius: 5px;
 }
 </style>

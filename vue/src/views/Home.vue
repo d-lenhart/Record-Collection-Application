@@ -44,23 +44,23 @@ header {
   align-items: center;
   justify-content: center;  
   color: #eee;
-  text-shadow: -1px 1px 0 maroon,
+  text-shadow: -1px 1px 0 black,
                 1px 1px 0 maroon,
                 1px -1px 0 maroon,
                -1px -1px 0 maroon;
   padding-bottom: 50px;
-  height: 20vh;  
+  height: 18vh;  
 }
 
 #header-text {
-  margin-top: 60px;
+  margin-top: 55px;
   position: static;
 }
 
 header > img {
   border-radius: 40px;
-  height: 70%;
-  margin-left: 90vw;
+  height: 15%;
+  margin-left: 800px;
   position: fixed;
 }
 
@@ -77,6 +77,5 @@ header > img {
                 1px 1px 0 #000,
                 1px -1px 0 #000,
                -1px -1px 0 #000;
-  text-decoration: underline;
 }
 </style>

@@ -118,17 +118,20 @@ img {
 }
 
 #headerText {
-  color: white;
-  font-family: 'PT Serif';
-  text-shadow: -2px 2px 0 #000,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
+  font-size: 45px;
+  font-family: 'PT Serif', 'Rubik', Calibri;
+  color: #eee;
+  text-shadow: -1px 1px 0 maroon,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   border-radius: 20px;
+  margin-top: 45px;
+  position: static;
 }
 
 .form-register {
@@ -144,10 +147,10 @@ img {
   text-align: center;
   justify-content: center;
   color: #000;
-  text-shadow: -2px 2px 0 #f8bd82,
-                2px 2px 0 #f8bd82,
-                2px -2px 0 #f8bd82,
-               -2px -2px 0 #f8bd82;
+   text-shadow: -1px 1px 0 silver,
+                1px 1px 0 #413122,
+                1px -1px 0 #413122,
+               -1px -1px 0 #413122;
                
   
   background-image: url(/images/LOUIS_ARMSTRONG_LOUIS+ARMSTRONG+AND+HIS+HOT+FIVE+NO.2-548158.jpg);
@@ -219,10 +222,16 @@ input[type=password] {
 }
 
 .router-link {
-  color: #cd7f32;
-  text-shadow: -2px 2px 0 #000,
+  color: silver;
+  text-shadow: -2px 2px 0 #cd7f32,
                 2px 2px 0 #000,
                 2px -2px 0 #000,
                -2px -2px 0 #000;
+  background: navy;
+}
+
+.sr-only {
+  background: navy;
+  border-radius: 5px;
 }
 </style>
