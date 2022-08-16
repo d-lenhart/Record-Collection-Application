@@ -45,6 +45,12 @@
         v-model="user.confirmPassword"
         required
       />
+       <!--
+        <div class="input-line" id="checkbox-text">
+              <label id="checkbox-label" for="">Check box for Premium Account, unchecked for Standard Account</label> &nbsp;
+              <input type="checkbox" id="userIsPremium" v-model="user.isPremium" />
+        </div>
+         -->
       <router-link class="router-link" :to="{ name: 'login' }">Have an account?</router-link>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         <span id="content1">Create</span>
@@ -256,4 +262,13 @@ input[type=password] {
   background: #003;
   border-radius: 5px;
 }
+
+/*#checkbox-text {
+  font-size: 30px;
+}
+
+#checkbox-label {
+  color: white;
+  text-shadow: none;
+}*/
 </style>

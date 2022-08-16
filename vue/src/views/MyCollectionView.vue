@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="background">
       <div class="header-container">
         <header>
             <div id="header-text-container">
                 <div id="headerText">
-                    YOUR COLLECTIONS
+                    Your Collections
                 </div>
             </div>
             <div id="headerImg">

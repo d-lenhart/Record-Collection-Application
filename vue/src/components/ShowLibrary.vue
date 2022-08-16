@@ -5,9 +5,9 @@
         <div>
         {{user.username}}'s Library
         </div>
-        </div>
         <div id="header-img">
              <img src="@/assets/logo.png" class ='albumImg' alt="a superdy duperdy cool thing" />
+        </div>
         </div>
     </header>
     <div class="library-container">
@@ -67,10 +67,11 @@ export default {
 </script>
 
 <style scoped>
-div > .library {
+.library-container {
     background-image: url("/images/record-shelf-vintage-vinyl-aa5f5bfe6ab88cb4c124cefdbd2c41e1.jpg");
     background-size: cover;
     height: 100vh; 
+    background-attachment: scroll;
 }
 
 .library-container {
@@ -81,7 +82,8 @@ div > .library {
     display: flex;
     flex-wrap: wrap;
     gap: 30px; 
-    margin-bottom: 250px;  
+    margin-top: 100px;
+    margin-bottom: 150px;  
 }
 
 
@@ -114,9 +116,7 @@ header {
 }
 
 #header-img {
-    margin-left: 90%;
     position: static;
-    
 }
 
 </style>

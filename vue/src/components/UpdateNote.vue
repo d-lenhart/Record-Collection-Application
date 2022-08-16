@@ -3,7 +3,7 @@
       <form class = "form-update-note" v-on:submit.prevent="updateNote">
 			<div class = "input">
 				<label for = "note">Notes</label>
-				<textarea id="note" name="note" rows="12" cols="40" v-model="album.notes"></textarea>
+				<textarea id="note" name="note" rows="12" cols="60" v-model="album.notes"></textarea>
 			</div>
 			
   <div class="update-button">
@@ -103,6 +103,7 @@ justify-content: center;
 label { 
     text-align: center;
     padding-bottom: 20px;
+    font-size: 80px;
 }
 
 textarea {
@@ -110,6 +111,7 @@ textarea {
     border-width: 10px;
     border-color: #777789;
     font-size: 25px;
+    font-family: 'PT Serif', 'Rubik', Calibri;
 }
 
 .update-button {
@@ -123,10 +125,11 @@ button {
     font-size: 25px;
     border-radius: 10px;
     border-color: gold;
+    font-family: 'PT Serif', 'Rubik', Calibri;
 }
 .input {
     font-size: 40px;
-    font-family: 'Rubik', Calibri;
+    font-family: 'PT Serif', 'Rubik', Calibri;
     color: white;
     text-shadow: -2px 2px 0 #000,
                 2px 2px 0 #000,

@@ -3,12 +3,11 @@
     <div id="nav">
         <router-link id="router-link" v-bind:to="{ name: 'add-collection' }">
             <div id="new-collection-text">
-             ADD A NEW COLLECTION
+             Add A New Collection
             </div>
         </router-link>
     </div>
     <div id="collection-display-container">
-        <p>Does this div even exist??</p>
         <collection-display class="container"
             v-for="collection in collections" 
             v-bind:key="collection.collectionId" 
@@ -76,7 +75,7 @@ export default {
 }
 
 #new-collection-text {
-  width: 550px;
+  width: 450px;
   font-size: 45px;
   color: silver;
   text-shadow: -1px 1px 0 #cd7f32,

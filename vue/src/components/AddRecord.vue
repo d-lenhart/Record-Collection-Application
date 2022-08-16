@@ -122,7 +122,7 @@ export default {
 
 <style scoped>
 .form-addRecord {
-    padding-top: 2%;
+  padding-top: 2%;
   font-size: 42px;
   font-family: "PT Serif";
   display: flex;
@@ -145,6 +145,7 @@ label {
                 1px 1px 0 silver,
                 1px -1px 0 silver,
                -1px -1px 0 silver;
+               
 }
 
 input[type=text] {
@@ -176,6 +177,7 @@ input[type=number] {
     align-items: center;
     justify-content: left;
     gap: 10px;
+    background: none;
 }
 
 button {

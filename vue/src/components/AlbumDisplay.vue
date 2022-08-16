@@ -6,9 +6,6 @@
     </header>
 </div>
 <div class="album-container">
-  <div id="headerImg">
-      <img src="@/assets/logo.png" class ='albumImg' alt="a superdy duperdy cool thing" />
-      </div>
   <div class="album" v-bind:key="album.albumId">
     <h3>{{ album.title }}</h3>
     <p><u>Artist</u>: {{ album.artist }}</p>
@@ -20,17 +17,17 @@
     
     
 <router-link class="router-link" :to="{ name: 'update-note', params: {userId: $store.state.user.id, albumId: album.albumId} }">
-    <button>Update Notes</button>
+    <button id="user-library-button">Update Notes</button>
   </router-link>
   <div id="add-to-collection-menu">
     <p>Add to Collection: </p>
     <select id = "collectionsDropDownList" v-model="selectedCollectionId" >
       <option v-for="collection in collections" v-bind:key="collection.collectionId" v-bind:value="collection">{{collection.title}}</option>
     </select>
-    <button id="add-album-to-collection-button" v-on:click.prevent="saveAlbumToCollection(album.albumId)" >Add</button>
+    <button id="user-library-button" v-on:click.prevent="saveAlbumToCollection(album.albumId)" >Add</button>
   </div>
   <router-link v-bind:to="{name: 'delete-record', params: {userId: $store.state.user.id, albumId: album.albumId}}">
-  <button class="delete-button">
+  <button id="user-library-delete-button">
     DELETE RECORD
   </button>
   </router-link>
@@ -131,7 +128,7 @@ h3 {
 }
 
 .album-container {
-  height: 400px;
+  height: 600px;
   width: 300px;
   display: flex;
   padding: 20px;
@@ -141,7 +138,7 @@ h3 {
 }
 
 .album {
-  height: 400px;
+  height: 550px;
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -149,14 +146,31 @@ h3 {
   justify-content: center;
   background-color: lightblue;
   border-radius: 15px;
+  color: black;
+  text-shadow: -1px 1px 0 maroon,
+                1px 1px 0 silver,
+                1px -1px 0 silver,
+               -1px -1px 0 silver;
+  
 }
 
-button {
+#user-library-button {
   font-family: 'PT Serif'; 
   border-radius: 5px;
   background-color: #cd7f32;
   color: #eee;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 30px;
+  width: 180px;
+  font-size: 20px;
+}
+
+#add-to-collection-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -194,8 +208,20 @@ button {
   text-decoration: none;
 }
 
-.delete-button {
+#user-library-delete-button {
+  font-family: 'PT Serif'; 
+  border-radius: 5px;
   background-color: red;
+  color: #eee;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 30px;
+  width: 180px;
+  font-size: 20px;
 }
 
 </style>
