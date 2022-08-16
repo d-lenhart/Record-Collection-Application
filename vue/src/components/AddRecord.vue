@@ -124,7 +124,7 @@ export default {
 .form-addRecord {
     padding-top: 2%;
   font-size: 42px;
-  font-family: "PT-Serif";
+  font-family: "PT Serif";
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -139,6 +139,13 @@ export default {
 
 }
 
+label {
+    color: black;
+    text-shadow: -1px 1px 0 #cd7f32,
+                1px 1px 0 silver,
+                1px -1px 0 silver,
+               -1px -1px 0 silver;
+}
 
 input[type=text] {
     font-size: 30px;
@@ -181,7 +188,7 @@ button {
   height: 150px;
   border-radius:100px;
 
-  font-family: 'Rubik', Calibri;
+  font-family: 'PT Serif', 'Rubik', Calibri;
 
   border-color: grey;
 

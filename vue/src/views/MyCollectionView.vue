@@ -4,7 +4,7 @@
     <header>
       <div id="header-text-container">
       <div id="headerText">
-        YOUR COLLECTIONS
+        Your Collections
       </div>
       </div>
       <div id="headerImg">
@@ -12,7 +12,7 @@
       </div>
     </header>
 </div>
-  <div>
+  <div class="background">
       <my-collection />
   </div>
   </div>
@@ -44,7 +44,7 @@ img {
   text-align: center;
 }
 #headerText {
-  font-size: 45px;
+  font-size: 65px;
   font-family: 'PT Serif', 'Rubik', Calibri;
   color: #eee;
   text-shadow: -1px 1px 0 maroon,
@@ -56,7 +56,7 @@ img {
   justify-content: center;
   text-align: center;
   border-radius: 20px;
-  margin-top: 45px;
+  margin-top: 20px;
   position: static;
 }
 
@@ -64,5 +64,11 @@ img {
   height: 100px;
   width: 1800px;
   position: fixed;
+}
+
+.background {
+  background-image: url("/images/pexels-pixabay-164901.jpg");
+  height: 100vh;
+  background-size: cover;
 }
 </style>

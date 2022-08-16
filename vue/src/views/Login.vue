@@ -3,12 +3,12 @@
   <div class="header-container">
     <header>
       <div id="header-text-container">
-      <div id="headerText">
-        A vinyl hub and forum for enthusiasts and historians of the Chicago music scene
+        <div id="headerText">
+          A vinyl hub and forum for enthusiasts and historians of the Chicago music scene
+        </div>
       </div>
-      </div>
-       <div id="headerImg">
-      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
+      <div id="headerImg">
+        <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
       </div>
     </header>
 </div> 

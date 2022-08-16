@@ -1,10 +1,19 @@
 <template> 
 <div>
+  <div class="header-container">
     <header>
-             Add a Record
+      <div id="header-text-container">
+        <div id="headerText">
+          Add A Record
+        </div>
+      </div>
+      <div id="headerImg">
+          <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
+      </div>
       </header> 
       <add-record />
   </div>
+</div>
   
 
 </template>
@@ -24,28 +33,15 @@ export default {
 </script>
 
 <style scoped>
-header {
-  display: flex;
-  font-size: 60px;
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
-  background-size: cover;
-  background-position-y: 400px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 60px;
-  color: gold;
-  text-shadow: -3px 3px 0 maroon,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
-  height: 15vh;  
+#headerText {
+  font-size: 80px;
 }
 
-img {
-  border-radius: 20px;
+#header-text-container {
+  height: 100px;
+  width: 500px;
+  margin-bottom: 50px;
 }
-
 
 
 </style>
