@@ -19,7 +19,7 @@ export default {
   },
 
   deleteRecord(userId, albumId) {
-    return axios.delete("/albums/" + userId + "/" + albumId);
+    return axios.delete("/albums/" + userId + "/delete/" + albumId);
   },
 
   createNewCollection(newCollection, userId) {

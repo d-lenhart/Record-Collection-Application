@@ -15,7 +15,7 @@
           </div>
           <div class="button-container">          
             <button type="submit">Yes, Delete Record</button>
-            <button id="return-to-library" v-on:click="returnToUserLibrary()">Cancel</button>
+            <button id="return-to-library" v-on:click.prevent="returnToUserLibrary()">Cancel</button>
           </div>
       </form>
   </div>
@@ -40,15 +40,9 @@ export default {
             }
         }
     },
-    props: ["existingRecord"],
-    created() {
-        if(this.existingRecord) {
-            this.record = this.existingRecord;
-        }
-    },
     methods: {
         deleteRecord() {
-            recordService.deleteRecord(this.$store.state.user.id, this.record.id).then (
+            recordService.deleteRecord(this.$store.state.user.id, this.$route.params.albumId).then (
                 () => {
                 this.$router.push({name: 'Library'});
             }
@@ -63,11 +57,12 @@ export default {
                     }
                 }
             );
-        }
-    },
+        },
+    
     returnToUserLibrary() {
         this.$router.push({name: 'Library'});
     }
+}
 }
 </script>
 

@@ -85,7 +85,7 @@ const router = new Router({
       component: MyCollectionView
     },
     {
-      path: '/delete',
+      path: '/albums/:userId/delete/:albumId',
       name: 'delete-record',
       component: DeleteRecord
     }
