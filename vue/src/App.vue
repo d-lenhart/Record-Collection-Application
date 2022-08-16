@@ -43,6 +43,7 @@ export default {
                 1px -1px 0 maroon,
                -1px -1px 0 maroon;
   position: static;
+  text-decoration: none;
 }
 
 #app {

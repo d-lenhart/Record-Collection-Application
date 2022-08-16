@@ -1,10 +1,11 @@
 <template>
 <div> 
-  <div>
+  <div class="header-container">
     <header>
-     
+      <div id="header-text-container">
       <div id="headerText">
         A vinyl hub and forum for enthusiasts and historians of the Chicago music scene
+      </div>
       </div>
        <div id="headerImg">
       <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
@@ -109,12 +110,20 @@ export default {
 
 <style scoped>
 header {
-  display: flex;
-  font-size: 40px;
+  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  
+  height: 18vh;
 }
+
 img {
-  border-radius: 20px;
-  height: 80%;
+  border-radius: 40px;
+  height: 20%;
+  margin-left: 750px;
+  position: fixed;
+}
+
+.header-container {
+  text-align: center;
 }
 
 #headerText {
@@ -134,6 +143,17 @@ img {
   position: static;
 }
 
+#header-text-container {
+  height: 100px;
+  width: 1800px;
+  position: fixed;
+}
+
+h1 {
+  background: #003;
+  border-radius: 5px;
+}
+
 .form-register {
   font-size: 40px;
   display: flex;
@@ -146,11 +166,12 @@ img {
   display: flex;
   text-align: center;
   justify-content: center;
-  color: #000;
-   text-shadow: -1px 1px 0 silver,
-                1px 1px 0 #413122,
-                1px -1px 0 #413122,
-               -1px -1px 0 #413122;
+  color: silver;
+  text-shadow: -1px 1px 0 #cd7f32,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
+  background: #003;
                
   
   background-image: url(/images/LOUIS_ARMSTRONG_LOUIS+ARMSTRONG+AND+HIS+HOT+FIVE+NO.2-548158.jpg);
@@ -223,15 +244,16 @@ input[type=password] {
 
 .router-link {
   color: silver;
-  text-shadow: -2px 2px 0 #cd7f32,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
-  background: navy;
+  text-shadow: -1px 1px 0 #cd7f32,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
+  background: #003;
+  border-radius: 5px;
 }
 
 .sr-only {
-  background: navy;
+  background: #003;
   border-radius: 5px;
 }
 </style>

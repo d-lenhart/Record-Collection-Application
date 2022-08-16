@@ -1,7 +1,14 @@
 <template>
 <div class="library">
     <header>
+        <div id="header-text-container">
+        <div>
         {{user.username}}'s Library
+        </div>
+        </div>
+        <div id="header-img">
+             <img src="@/assets/logo.png" class ='albumImg' alt="a superdy duperdy cool thing" />
+        </div>
     </header>
     <div class="library-container">
      <album-display class="container"
@@ -73,7 +80,8 @@ div > .library {
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;   
+    gap: 30px; 
+    margin-bottom: 250px;  
 }
 
 
@@ -97,6 +105,18 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+#header-text-container {
+    height: 180px;
+    width: 1800px;
+    margin-top: 100px;
+}
+
+#header-img {
+    margin-left: 90%;
+    position: static;
+    
 }
 
 </style>

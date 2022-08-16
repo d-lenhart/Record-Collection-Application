@@ -1,12 +1,14 @@
 <template>
   <div>
-      <div>
+      <div class="header-container">
     <header>
-      <div id="headerImg">
-      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
-      </div>
+      <div id="header-text-container">
       <div id="headerText">
         YOUR COLLECTIONS
+      </div>
+      </div>
+      <div id="headerImg">
+      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
       </div>
     </header>
 </div>
@@ -30,21 +32,37 @@ header {
   display: flex;
   font-size: 60px;
 }
+
 img {
-  border-radius: 20px;
+  border-radius: 40px;
+  height: 20%;
+  margin-left: 750px;
+  position: fixed;
 }
 
+.header-container {
+  text-align: center;
+}
 #headerText {
-  font-family: 'Rubik', Calibri;
-  color: white;
-  text-shadow: -2px 2px 0 #000,
-                2px 2px 0 #000,
-                2px -2px 0 #000,
-               -2px -2px 0 #000;
+  font-size: 45px;
+  font-family: 'PT Serif', 'Rubik', Calibri;
+  color: #eee;
+  text-shadow: -1px 1px 0 maroon,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   border-radius: 20px;
+  margin-top: 45px;
+  position: static;
+}
+
+#header-text-container {
+  height: 100px;
+  width: 1800px;
+  position: fixed;
 }
 </style>

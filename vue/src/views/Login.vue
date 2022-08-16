@@ -97,8 +97,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 header {
   background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
   
@@ -139,6 +137,11 @@ img {
   position: fixed;
 }
 
+h1 {
+  background: #003;
+  border-radius: 5px;
+}
+
 .form-signin {
   font-size: 40px;
   display: flex;
@@ -151,11 +154,11 @@ img {
   display: flex;
   text-align: center;
   justify-content: center;
-  color: #000;
-  text-shadow: -1px 1px 0 silver,
-                1px 1px 0 #413122,
-                1px -1px 0 #413122,
-               -1px -1px 0 #413122;
+  color: silver;
+  text-shadow: -1px 1px 0 #cd7f32,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
                
   
   background-image: url(/images/LOUIS_ARMSTRONG_LOUIS+ARMSTRONG+AND+HIS+HOT+FIVE+NO.2-548158.jpg);
@@ -236,11 +239,12 @@ button {
                 1px 1px 0 #000,
                 1px -1px 0 #000,
                -1px -1px 0 #000;
-               background: navy;
+  background: #003;
+  border-radius: 5px;
 }
 
 .sr-only {
-  background: navy;
+  background: #003;
   border-radius: 5px;
 }
 </style>
