@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
+      <div id="route-container">
       <router-link id="router-link" v-bind:to="{ name: 'home' }">Home</router-link> &nbsp;|
       <router-link id="router-link" v-bind:to="{ name: 'Library' }">My Library</router-link> &nbsp;|
       <router-link id="router-link" v-bind:to="{ name: 'my-collections' }">My Collections</router-link> &nbsp; |
       <router-link id="router-link" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+      </div>
     </div>
     <router-view />
   </div>
@@ -40,11 +42,18 @@ export default {
                 1px 1px 0 maroon,
                 1px -1px 0 maroon,
                -1px -1px 0 maroon;
+  position: static;
 }
 
 #app {
   height: 100%;
   font-family: 'PT Serif'
+}
+
+#route-container {
+  height: 50px;
+  width: 2500px;
+  position: fixed;
 }
 
 </style>

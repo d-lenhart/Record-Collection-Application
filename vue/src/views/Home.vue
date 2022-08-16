@@ -2,7 +2,11 @@
 <div class="homeBackground">
 <div class="header-container">
     <header>
+      <div id="header-text-container">
+      <div id="header-text">
       A Hub for Enthusiasts of the Chicago Vinyl Scene
+      </div>
+      </div>
       <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />          
     </header>
     <div class="home-container">
@@ -32,11 +36,11 @@ height: 100vh;
 }
 header {
   display: flex;
+
   font-size: 60px;
   background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
   background-size: cover;
   background-position-y: 400px; 
-  display: flex;
   align-items: center;
   justify-content: center;  
   color: #eee;
@@ -48,12 +52,23 @@ header {
   height: 20vh;  
 }
 
-header > img {
-  border-radius: 40px;
-  height: 90%;
+#header-text {
+  margin-top: 60px;
+  position: static;
 }
 
+header > img {
+  border-radius: 40px;
+  height: 70%;
+  margin-left: 90vw;
+  position: fixed;
+}
 
+#header-text-container {
+  height: 150px;
+  width: 1500px;
+  position: fixed;
+}
 
 .router-link {
   font-size: 40px;

@@ -63,7 +63,7 @@ export default {
 div > .library {
     background-image: url("/images/record-shelf-vintage-vinyl-aa5f5bfe6ab88cb4c124cefdbd2c41e1.jpg");
     background-size: cover;
-    height: 100vh;  
+    height: 100vh; 
 }
 
 .library-container {
@@ -84,7 +84,7 @@ img {
 
 
 header {
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");;
+  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
   font-family: 'PT Serif', 'Rubik', Calibri;
   font-size: 60px;
   color: #eee;
