@@ -22,10 +22,13 @@
 <router-link class="router-link" :to="{ name: 'update-note', params: {userId: $store.state.user.id, albumId: album.albumId} }">
     <button>Update Notes</button>
   </router-link>
-  <p>Add to Collection: </p>
-  <select id = "collectionsDropDownList">
-    <option v-for="collection in collections" v-bind:key="collection.collectionId" v-bind:value="collection">{{collection.title}}</option>
-  </select>
+  <div id="add-to-collection-menu">
+    <p>Add to Collection: </p>
+    <select id = "collectionsDropDownList">
+      <option v-for="collection in collections" v-bind:key="collection.collectionId" v-bind:value="collection">{{collection.title}}</option>
+    </select>
+    <add-album-to-collection />
+  </div>
   <router-link v-bind:to="{name: 'delete-record', params: {userId: $store.state.user.id, albumId: album.albumId}}">
   <button class="delete-button">
     DELETE RECORD
@@ -39,10 +42,15 @@
 
 <script>
 import recordService from "@/services/RecordService.js"
+import addAlbumToCollection from "@/components/AddAlbumToCollection.vue"
 
 export default {
   name: "album-display",
   props: ["album"],
+  components: {
+    addAlbumToCollection
+   
+  },
   data() {
       return {
         collection: {

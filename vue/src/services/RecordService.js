@@ -28,6 +28,10 @@ export default {
 
   getCollections(userId) {
     return axios.get('/collections/' + userId + '/')
+  },
+
+  addAlbumToCollection(userId, collectionId, albumId) {
+    return axios.get('/collections/' + userId + '/' + collectionId + '/' + albumId)
   }
 
 /*   getMbid(title) {

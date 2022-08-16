@@ -1,6 +1,6 @@
 <template>
   <div id = "add-collection">
-      <form class = "form-add-collection" v-on:submit.prevent="addCollection">
+      <form class = "form-add-collection" v-on:submit.prevent="createCollection">
           <div class="input-line">
               <label for="">COLLECTION TITLE</label> &nbsp;
               <input type="text" id="collectionTitle" v-model="collection.title" />
@@ -13,13 +13,14 @@
               <label for="">COLLECTION NOTES</label> &nbsp;
               <input type="text" id="collectionNotes" v-model="collection.notes " />
           </div>
-          <button type = "submit">
+          <!-- <button type="submit">
             <span id="content1">Add</span>
             <span id="content2"></span>
             <div class="inner-circle"></div>
             <span id="content3"></span>
             <span id="content4">Collection</span>
-          </button>
+          </button> -->
+          <button type="submit">Create Collection</button>
       </form>
   </div>
 </template>
