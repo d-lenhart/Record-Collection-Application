@@ -1,20 +1,20 @@
 <template>
   <div>
       <div class="header-container">
-    <header>
-      <div id="header-text-container">
-      <div id="headerText">
-        Your Collections
+        <header>
+            <div id="header-text-container">
+                <div id="headerText">
+                    YOUR COLLECTIONS
+                </div>
+            </div>
+            <div id="headerImg">
+                <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
+            </div>
+        </header>
       </div>
+      <div>
+        <my-collection />
       </div>
-      <div id="headerImg">
-      <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
-      </div>
-    </header>
-</div>
-  <div class="background">
-      <my-collection />
-  </div>
   </div>
 </template>
 

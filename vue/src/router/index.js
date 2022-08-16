@@ -11,7 +11,7 @@ import UpdateNote from '../components/UpdateNote.vue'
 import AddCollection from '../components/AddCollection'
 import MyCollectionView from '../views/MyCollectionView.vue'
 import DeleteRecord from '../components/DeleteRecord.vue'
-import AddAlbumToCollection from '../components/AddAlbumToCollection.vue'
+import ShowCollectionDetails from '../components/ShowCollectionDetails.vue'
 
 Vue.use(Router)
 
@@ -91,9 +91,9 @@ const router = new Router({
       component: DeleteRecord
     },
     {
-      path: '/collections/:userId/:collectionId/:albumId',
-      name: 'add-album-to-collection',
-      component: AddAlbumToCollection
+      path: '/collections/:userId/:collectionId',
+      name: 'show-collection-details',
+      component: ShowCollectionDetails
     }
   ]
 })

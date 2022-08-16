@@ -24,10 +24,10 @@
   </router-link>
   <div id="add-to-collection-menu">
     <p>Add to Collection: </p>
-    <select id = "collectionsDropDownList">
+    <select id = "collectionsDropDownList" v-model="selectedCollectionId" >
       <option v-for="collection in collections" v-bind:key="collection.collectionId" v-bind:value="collection">{{collection.title}}</option>
     </select>
-    <add-album-to-collection />
+    <button id="add-album-to-collection-button" v-on:click.prevent="saveAlbumToCollection(album.albumId)" >Add</button>
   </div>
   <router-link v-bind:to="{name: 'delete-record', params: {userId: $store.state.user.id, albumId: album.albumId}}">
   <button class="delete-button">
@@ -42,15 +42,11 @@
 
 <script>
 import recordService from "@/services/RecordService.js"
-import addAlbumToCollection from "@/components/AddAlbumToCollection.vue"
 
 export default {
   name: "album-display",
   props: ["album"],
-  components: {
-    addAlbumToCollection
-   
-  },
+  
   data() {
       return {
         collection: {
@@ -60,7 +56,8 @@ export default {
                 notes: "",
                 collectionId: ""
             },
-        collections: []
+        collections: [],
+        selectedCollectionId: 0
       }
   },
   created() {
@@ -76,6 +73,25 @@ export default {
             this.collections = response.data;
           }
         )
+    },
+    saveAlbumToCollection(albumId) {
+      alert(this.selectedCollectionId.collectionId + " " + albumId);
+
+      recordService.addAlbumToCollection(this.$store.state.user.id, this.selectedCollectionId.collectionId, albumId).catch(
+                 error => {
+                    if(error.response) {
+                        this.errorMsg = error.response.statusText;
+                    } else if (error.request) {
+                        this.errorMsg = "We couldn't find the server";
+                    } else {
+                        this.errorMsg = "Error - we couldn't process the request";
+                    }
+                }
+            );
+            this.displayMessage("This album has been added to your collection!");
+    },
+    displayMessage(message) {
+            alert(message);
     },
   }
 
