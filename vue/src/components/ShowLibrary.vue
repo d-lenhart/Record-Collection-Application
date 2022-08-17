@@ -121,6 +121,12 @@ header {
 .router-link {
     background-color: #003;
     border-radius: 5px;
+  font-size: 45px;
+  color: silver;
+  text-shadow: -1px 1px 0 #cd7f32,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
 }
 
 </style>

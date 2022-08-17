@@ -2,12 +2,14 @@ package com.techelevator.dao;
 
 import com.techelevator.model.Statistics;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-/*
+
 @Component
 public class JdbcLibraryStatisticDao implements LibraryStatisticDao {
 
@@ -29,10 +31,10 @@ public class JdbcLibraryStatisticDao implements LibraryStatisticDao {
 
         return albumsCount;
     }
-
+/*
     @Override
     public Statistics listMostPopularGenres() {
-        Statistics genreList;
+        Statistics statistics = new Statistics();
 
         String sql = "SELECT genre, COUNT(genre) AS genre_amount " +
                 "FROM album_library " +
@@ -40,14 +42,18 @@ public class JdbcLibraryStatisticDao implements LibraryStatisticDao {
                 "ORDER BY genre_amount DESC " +
                 "LIMIT 5;";
 
-        genreList = jdbcTemplate.queryForObject(sql, Statistics.class);
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
 
-        return genreList;
+        if (results.next()) {
+            statistics = mapRowToStatistics(results);
+        }
+
+        return statistics;
     }
-
-    @Override
-    public Statistics listMostPopularArtist() {
-        Statistics list = statistics.getArtistList();
+*/
+   @Override
+    public Statistics listMostPopularArtists() {
+        Statistics statistics = new Statistics();
 
         String sql = "SELECT artist, COUNT(artist) AS artist_amount " +
                 "FROM album_library " +
@@ -55,11 +61,15 @@ public class JdbcLibraryStatisticDao implements LibraryStatisticDao {
                 "ORDER BY artist_amount DESC " +
                 "LIMIT 5;";
 
-        list = jdbcTemplate.queryForObject(sql, Statistics.class);
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
 
-        return list;
+        if (results.next()) {
+            statistics = mapRowToStatistics(results);
+        }
+
+        return statistics;
     }
-
+    /*
     public Statistics mostRecentAlbumAdded() {
         Statistics album = statistics.getMostRecentAlbum();
 
@@ -101,9 +111,35 @@ public class JdbcLibraryStatisticDao implements LibraryStatisticDao {
 
         return collectionList;
     }
+    */
+
+
+    private Statistics mapRowToStatistics(SqlRowSet rowSet) {
+        Statistics statistics = new Statistics();
+
+        if (rowSet.getString("genre") != null) {
+            statistics.setGenre(rowSet.getString("genre"));
+        }
+        if (rowSet.getInt("genre_amount") != 0) {
+            statistics.setGenreAmount(rowSet.getInt("genre_amount"));
+        }
+        if (rowSet.getString("artist") != null) {
+            statistics.setArtist(rowSet.getString("artist"));
+        }
+        if (rowSet.getInt("artist_amount") != 0) {
+            statistics.setArtistAmount(rowSet.getInt("artist_amount"));
+        }
+        if (rowSet.getString("title") != null) {
+            statistics.setTitle(rowSet.getString("title"));
+        }
+        if (rowSet.getDate("release_date") != null) {
+            statistics.setReleaseDate(rowSet.getDate("release_date").toLocalDate());
+        }
+        return statistics;
+    }
 
 
 
 
 }
-*/
+

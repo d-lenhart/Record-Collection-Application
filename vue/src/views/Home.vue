@@ -10,7 +10,7 @@
       <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />          
     </header>
     <div class="home-container">
-      <h3>Total Records</h3>
+     <!-- <h3>Total Records</h3> -->
       <p v-show="getTotalRecords">{{number}}</p>
     </div>
   </div>

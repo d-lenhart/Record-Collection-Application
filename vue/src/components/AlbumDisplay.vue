@@ -87,7 +87,6 @@ export default {
         )
     },
     saveAlbumToCollection(albumId) {
-
       recordService.addAlbumToCollection(this.$store.state.user.id, this.selectedCollectionId.collectionId, albumId).catch(
                  error => {
                     if(error.response) {
@@ -99,7 +98,9 @@ export default {
                     }
                 }
             );
+            if (this.selectedCollectionId.collectionId > 0) {
             this.displayMessage("This album has been added to your collection!");
+      }
     },
     displayMessage(message) {
             alert(message);
@@ -121,7 +122,7 @@ export default {
                 }
             );
             this.displayMessage("This album has been removed from your collection!");
-            
+      
     }
   }
 
@@ -255,6 +256,22 @@ h3 {
   height: 30px;
   width: 180px;
   font-size: 20px;
+}
+
+#collectionsDropDownList {
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+  font-family: 'PT Serif'
+}
+#user-library-remove-button{
+  font-family: 'PT Serif';
+  color: #cd7f32;
+  text-shadow: -1px 1px 0 black,
+                1px 1px 0 black,
+                1px -1px 0 silver,
+               -1px -1px 0 black;
+  border-radius: 10px;
 }
 
 </style>

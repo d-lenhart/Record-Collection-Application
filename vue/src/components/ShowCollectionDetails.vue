@@ -78,6 +78,7 @@ export default {
     background-size: cover;
     height: 100vh; 
     background-attachment: scroll;
+    
 }
 
 .library-container {
@@ -89,7 +90,7 @@ export default {
     flex-wrap: wrap;
     gap: 30px; 
     margin-top: 100px;
-    margin-bottom: 150px;  
+    margin-bottom: 150px; 
 }
 
 

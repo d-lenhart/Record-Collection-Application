@@ -82,7 +82,8 @@ export default {
                 1px 1px 0 #000,
                 1px -1px 0 #000,
                -1px -1px 0 #000;
-               background: #003;
+background: #003;
+border-radius: 5px;
   
   
 }

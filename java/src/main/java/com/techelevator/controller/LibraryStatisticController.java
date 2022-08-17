@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-/*
+
 @RestController
 @CrossOrigin
 public class LibraryStatisticController {
@@ -21,10 +21,10 @@ public class LibraryStatisticController {
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public Statistics getTotalRecords(){
-        Statistics obj2 =  libraryStatisticDao.listMostPopularArtist();
-        return obj2;
+        Statistics libraryStatistics = libraryStatisticDao.listMostPopularArtists();
+        return libraryStatistics;
     }
 
 }
-*/
+
 

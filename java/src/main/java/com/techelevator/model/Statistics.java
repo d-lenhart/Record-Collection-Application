@@ -1,62 +1,63 @@
 package com.techelevator.model;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
 public class Statistics {
 
-    private int numberOfRecords = 0;
-    private Map<String, Integer> genreList;
-    private Map<String, Integer> artistList;
-    private Album mostRecentAlbum;
-    private int numberOfCollections;
-    private Map <String, Integer> collectionList;
+    private String genre;
+    private int genreAmount;
+    private String artist;
+    private int artistAmount;
+    private String title;
+    private LocalDate releaseDate;
 
-    public int getNumberOfRecords() {
-        return numberOfRecords;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setNumberOfRecords(int numberOfRecords) {
-        this.numberOfRecords = numberOfRecords;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public Map<String, Integer> getGenreList() {
-        return genreList;
+    public int getGenreAmount() {
+        return genreAmount;
     }
 
-    public void setGenreList(Map<String, Integer> genreList) {
-        this.genreList = genreList;
+    public void setGenreAmount(int genreAmount) {
+        this.genreAmount = genreAmount;
     }
 
-    public Map<String, Integer> getArtistList() {
-        return artistList;
+    public String getArtist() {
+        return artist;
     }
 
-    public void setArtistList(Map<String, Integer> artistList) {
-        this.artistList = artistList;
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 
-    public Album getMostRecentAlbum() {
-        return mostRecentAlbum;
+    public int getArtistAmount() {
+        return artistAmount;
     }
 
-    public void setMostRecentAlbum(Album mostRecentAlbum) {
-        this.mostRecentAlbum = mostRecentAlbum;
+    public void setArtistAmount(int artistAmount) {
+        this.artistAmount = artistAmount;
     }
 
-    public int getNumberOfCollections() {
-        return numberOfCollections;
+    public String getTitle() {
+        return title;
     }
 
-    public void setNumberOfCollections(int numberOfCollections) {
-        this.numberOfCollections = numberOfCollections;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public Map<String, Integer> getCollectionList() {
-        return collectionList;
+    public LocalDate getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setCollectionList(Map<String, Integer> collectionList) {
-        this.collectionList = collectionList;
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }
