@@ -2,9 +2,10 @@
   <div id="app">
     <div id="nav">
       <div id="route-container">
-      <router-link id="router-link" v-bind:to="{ name: 'home' }">Home</router-link> &nbsp;|
-      <router-link id="router-link" v-bind:to="{ name: 'Library' }">My Library</router-link> &nbsp;|
-      <router-link id="router-link" v-bind:to="{ name: 'my-collections' }">My Collections</router-link> &nbsp; |
+      <router-link id="router-link" v-bind:to="{ name: 'home' }">Home &nbsp; |&nbsp;</router-link>
+      <router-link id="router-link" v-bind:to="{ name: 'Library' }" v-if="$store.state.token != ''">My Library &nbsp; |&nbsp;</router-link>
+      <router-link id="router-link" v-bind:to="{ name: 'my-collections' }" v-if="$store.state.token != ''"> My Collections &nbsp; |&nbsp;</router-link>
+      <router-link id="router-link" v-bind:to="{ name: 'all-collections' }">Community Collections &nbsp; |&nbsp;</router-link>
       <router-link id="router-link" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
       </div>
     </div>

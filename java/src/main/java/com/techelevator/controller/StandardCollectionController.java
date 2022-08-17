@@ -43,6 +43,10 @@ public class StandardCollectionController {
         }
         return null;
     }
+    @RequestMapping(path = "/collections/public/", method = RequestMethod.GET)
+    public List<Collection> getAllPublicCollections() {
+            return standardCollectionDao.getAllPublicCollections();
+    }
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/collections/{userId}", method = RequestMethod.POST)

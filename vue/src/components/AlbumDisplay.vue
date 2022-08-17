@@ -32,7 +32,7 @@
   </button>  
   </router-link>
     
-  <button id="user-library-remove-button" v-if="!isLibrary" v-on:click.prevent="removeAlbumFromCollection(collectionToBeRemoved, album.albumId)">
+  <button id="user-library-remove-button" v-if="!isLibrary && $store.state.token != ''" v-on:click.prevent="removeAlbumFromCollection(collectionToBeRemoved, album.albumId)">
     Remove Record
   </button>  
   

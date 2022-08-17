@@ -48,13 +48,9 @@ public class StandardUserController {
         }
         return null;
     }
-    @RequestMapping(path = "/albums/collection/{userId}/{collectionId}", method = RequestMethod.GET)
-    public List<Album> getAlbumsByCollectionId(@PathVariable int userId, @PathVariable int collectionId, Principal user) {
-        String username = user.getName();
-        if (userId == this.standardUserDao.findIdByUsername(username)) {
-            return standardUserDao.getAlbumsByCollectionId(collectionId);
-        }
-        return null;
+    @RequestMapping(path = "/albums/collection/{collectionId}", method = RequestMethod.GET)
+    public List<Album> getAlbumsByCollectionId(@PathVariable int collectionId) {
+        return standardUserDao.getAlbumsByCollectionId(collectionId);
     }
 
 

@@ -10,6 +10,7 @@ import ShowLibrary from '../components/ShowLibrary.vue'
 import UpdateNote from '../components/UpdateNote.vue'
 import AddCollection from '../components/AddCollection'
 import MyCollectionView from '../views/MyCollectionView.vue'
+import AllCollectionsView from '../views/AllCollectionsView.vue'
 import DeleteRecord from '../components/DeleteRecord.vue'
 import ShowCollectionDetails from '../components/ShowCollectionDetails.vue'
 
@@ -84,6 +85,11 @@ const router = new Router({
       path: '/my-collections/:userId',
       name: 'my-collections',
       component: MyCollectionView
+    },
+    {
+      path: '/all-collections/',
+      name: 'all-collections',
+      component: AllCollectionsView
     },
     {
       path: '/albums/:userId/delete/:albumId',

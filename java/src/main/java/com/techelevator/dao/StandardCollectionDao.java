@@ -11,6 +11,8 @@ public interface StandardCollectionDao {
 
     List<Collection> getAllCollections(int userId);
 
+    List<Collection> getAllPublicCollections();
+
     void addToCollection(int albumId, int collectionId);
 
     Collection createCollection(Collection collection, int userId);

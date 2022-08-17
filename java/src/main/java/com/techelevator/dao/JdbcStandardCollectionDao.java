@@ -1,6 +1,5 @@
 package com.techelevator.dao;
 
-import com.techelevator.model.Album;
 import com.techelevator.model.Collection;
 import com.techelevator.model.UserNotFoundException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -47,6 +46,23 @@ public class JdbcStandardCollectionDao implements StandardCollectionDao {
                 "WHERE user_id = ? ;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+
+        while(results.next()) {
+            collections.add(mapRowToCollection(results));
+        }
+
+        return collections;
+    }
+
+    @Override
+    public List<Collection> getAllPublicCollections() {
+        List<Collection> collections = new ArrayList<>();
+
+        String sql = "SELECT * " +
+                "FROM collection " +
+                "WHERE is_public = true;";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
 
         while(results.next()) {
             collections.add(mapRowToCollection(results));

@@ -29,6 +29,9 @@ export default {
   getCollections(userId) {
     return axios.get('/collections/' + userId + '/')
   },
+  getPublicCollections() {
+    return axios.get('/collections/public/')
+  },
 
   addAlbumToCollection(userId, collectionId, albumId) {
     return axios.get('/collections/' + userId + '/' + collectionId + '/' + albumId)
@@ -38,8 +41,8 @@ export default {
     return axios.get('/collections/' + userId + "/" + collectionId)
   },
 
-  getAlbumsByCollectionId(userId, collectionId) {
-    return axios.get('/albums/collection/' + userId + '/' + collectionId)
+  getAlbumsByCollectionId(collectionId) {
+    return axios.get('/albums/collection/' + collectionId)
   },
 
   removeAlbumFromCollection(userId, collectionId, albumId) {

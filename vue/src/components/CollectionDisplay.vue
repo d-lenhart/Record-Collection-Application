@@ -6,10 +6,9 @@
                 <h3>{{ collection.title }}</h3>
               </router-link>
               <p><u>Title</u>: {{ collection.title }}</p>
-              <p><u>Public/Private</u>: {{ collection.isPublic }}</p>
               <p><u>Notes</u>: {{ collection.notes }}</p>
               
-  <button id="user-library-delete-button" v-on:click.prevent="deleteCollection(collection.collectionId)">
+  <button id="user-library-delete-button" v-if="$store.state.token != ''" v-on:click.prevent="deleteCollection(collection.collectionId)">
     Delete Collection
   </button>  
  
@@ -35,12 +34,13 @@ export default {
 //         collections: []
 //       }
 //   },
+
     methods: {
-        deleteCollection(collectionId) {
-      recordService.deleteCollection(this.$store.state.user.id, collectionId).then (
+    deleteCollection(collectionId) {
+              recordService.deleteCollection(this.$store.state.user.id, collectionId).then (
                 () => {
                 this.$router.push({name: "Library"});
-            }
+                    }
             ).catch(
                  error => {
                     if(error.response) {
@@ -55,6 +55,10 @@ export default {
         
         
     },
+    canDelete() {
+       
+        return this.collection.collectionId === this.$store.state.user.id;
+    }
         }
     
 }

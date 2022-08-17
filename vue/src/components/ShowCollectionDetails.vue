@@ -45,7 +45,7 @@ export default {
                 username: this.$store.state.user.username
             },
             collection:{
-                userId: this.$store.state.user.id,
+               // userId: this.$store.state.user.id,
                 title: "",
                 isPublic: "",
                 notes: "",
@@ -60,7 +60,7 @@ export default {
     },
     methods: {
         loadCollection() {
-            recordService.getAlbumsByCollectionId(this.$store.state.user.id, this.$route.params.collection.collectionId).then(
+            recordService.getAlbumsByCollectionId(this.$route.params.collection.collectionId).then(
                 response => {
                    this.albums = response.data;
                 }
