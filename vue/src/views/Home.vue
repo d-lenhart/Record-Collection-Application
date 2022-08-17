@@ -64,8 +64,10 @@ header {
 }
 
 #header-text {
-  margin-top: 55px;
+  font-size: 65px;
+  margin-top: 30px;
   position: static;
+  text-align: center;
 }
 
 header > img {
@@ -79,6 +81,8 @@ header > img {
   height: 150px;
   width: 1500px;
   position: fixed;
+  display: flex;
+  justify-content: center;
 }
 
 .router-link {

@@ -132,7 +132,7 @@ img {
 }
 
 #headerText {
-  font-size: 45px;
+  font-size: 65px;
   font-family: 'PT Serif', 'Rubik', Calibri;
   color: #eee;
   text-shadow: -1px 1px 0 maroon,
