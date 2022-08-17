@@ -65,7 +65,6 @@ header {
 
 #header-text {
   font-size: 65px;
-  margin-top: 30px;
   position: static;
   text-align: center;
 }

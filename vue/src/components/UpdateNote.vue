@@ -1,4 +1,7 @@
 <template>
+<div>
+    <header>
+    </header>
   <div id = "update-note">
       <form class = "form-update-note" v-on:submit.prevent="updateNote">
 			<div class = "input">
@@ -15,6 +18,7 @@
 
 		</form>
   </div>
+</div>
 </template>
 
 <script>
@@ -86,6 +90,24 @@ export default {
 </script>
 
 <style scoped>
+header {
+   background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  font-family: 'PT Serif', 'Rubik', Calibri;
+  font-size: 60px;
+  color: #eee;
+  text-shadow: -1px 1px 0 black,
+                1px 1px 0 maroon,
+                1px -1px 0 maroon,
+               -1px -1px 0 maroon;
+  height: 18vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: static;
+}
+
+
 #update-note {
     background-image: url("/images/chicago-transit-authority-rhino-cd.jpg");
      background-position: bottom;

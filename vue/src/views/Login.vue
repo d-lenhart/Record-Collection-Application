@@ -124,7 +124,7 @@ img {
   justify-content: space-between;
   text-align: center;
   border-radius: 20px;
-  margin-top: 45px;
+  padding-bottom: 30px;
   position: static;
 }
 
@@ -165,6 +165,11 @@ background-size: contain;
 background-color: rgb(247, 241, 230);
 height: 100vh;
 padding-top: 2%;
+}
+
+input {
+  background: #003;
+  color: #eee;
 }
 
 input[type=text] {

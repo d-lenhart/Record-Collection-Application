@@ -110,8 +110,6 @@ header {
 #header-text-container {
     height: 90px;
     width: 1800px;
-    margin-top: 100px;
-    
 }
 
 #header-img {

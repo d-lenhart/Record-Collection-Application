@@ -144,7 +144,7 @@ img {
   justify-content: space-between;
   text-align: center;
   border-radius: 20px;
-  margin-top: 45px;
+  padding-bottom: 30px;
   position: static;
 }
 
@@ -206,6 +206,11 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+input {
+  background: #003;
+  color: #eee;
 }
 
 input[type=text] {
