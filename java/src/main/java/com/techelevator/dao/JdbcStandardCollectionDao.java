@@ -37,6 +37,7 @@ public class JdbcStandardCollectionDao implements StandardCollectionDao {
 
         return collection;
     }
+
     @Override
     public List<Collection> getAllCollections(int userId) {
         List<Collection> collections = new ArrayList<>();

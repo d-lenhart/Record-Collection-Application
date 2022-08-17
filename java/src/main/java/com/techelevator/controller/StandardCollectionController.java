@@ -75,6 +75,7 @@ public class StandardCollectionController {
 
     }
 
+
     @RequestMapping(path = "/collections/{userId}/delete/{collectionId}", method = RequestMethod.DELETE)
     public void deleteCollection(@Valid @PathVariable int userId, @Valid @PathVariable int collectionId, Principal user) {
         String username = user.getName();

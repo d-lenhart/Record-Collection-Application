@@ -7,9 +7,6 @@
           Add A Collection
         </div>
       </div>
-      <div id="headerImg">
-        <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
-      </div>
     </header>
 </div>
   <div class="collection-background" id = "add-collection">

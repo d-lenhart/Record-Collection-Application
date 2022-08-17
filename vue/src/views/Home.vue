@@ -10,7 +10,7 @@
       <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />          
     </header>
     <div class="home-container">
-    <router-link class="router-link" v-bind:to="{name: 'Albums' }" v-if="$store.state.token != ''">Add an album to your library</router-link>
+   
     </div>
   </div>
 </div>

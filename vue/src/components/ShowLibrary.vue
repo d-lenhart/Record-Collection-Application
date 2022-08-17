@@ -5,11 +5,9 @@
         <div>
         {{user.username}}'s Library
         </div>
-        <div id="header-img">
-             <img src="@/assets/logo.png" class ='albumImg' alt="a superdy duperdy cool thing" />
-        </div>
         </div>
     </header>
+     <router-link class="router-link" v-bind:to="{name: 'Albums' }" v-if="$store.state.token != ''">Add an album to your library</router-link>
     <div class="library-container">
      <album-display class="container"
       v-for="album in albums"

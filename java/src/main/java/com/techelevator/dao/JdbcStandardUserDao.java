@@ -35,6 +35,24 @@ public class JdbcStandardUserDao implements StandardUserDao{
 
         return album;
     }
+    @Override
+    public List<Album> getAlbumsByCollectionId(int collectionId) {
+        List<Album> albums = new ArrayList<>();
+
+        String sql = "SELECT DISTINCT * " +
+                     "FROM album_library " +
+                     "JOIN album_collection " +
+                     "ON album_library.album_id = album_collection.album_id " +
+                     "WHERE collection_id = ? ;";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, collectionId);
+
+        while(results.next()) {
+            albums.add(mapRowToAlbum(results));
+        }
+
+        return albums;
+    }
 
     @Override
     public Album createAlbum(Album album) {

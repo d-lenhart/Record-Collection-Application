@@ -16,21 +16,26 @@
     <p><u>Notes</u>: {{ album.notes }}</p>
     
     
-<router-link class="router-link" :to="{ name: 'update-note', params: {userId: $store.state.user.id, albumId: album.albumId} }">
+<router-link class="router-link" v-if="isLibrary" :to="{ name: 'update-note', params: {userId: $store.state.user.id, albumId: album.albumId} }">
     <button id="user-library-button">Update Notes</button>
   </router-link>
-  <div id="add-to-collection-menu">
+  <div id="add-to-collection-menu" v-if="isLibrary">
     <p>Add to Collection: </p>
-    <select id = "collectionsDropDownList" v-model="selectedCollectionId" >
+    <select id = "collectionsDropDownList"  v-model="selectedCollectionId" >
       <option v-for="collection in collections" v-bind:key="collection.collectionId" v-bind:value="collection">{{collection.title}}</option>
     </select>
     <button id="user-library-button" v-on:click.prevent="saveAlbumToCollection(album.albumId)" >Add</button>
   </div>
-  <router-link v-bind:to="{name: 'delete-record', params: {userId: $store.state.user.id, albumId: album.albumId}}">
+  <router-link v-if="isLibrary" v-bind:to="{name: 'delete-record', params: {userId: $store.state.user.id, albumId: album.albumId}}">
   <button id="user-library-delete-button">
     DELETE RECORD
-  </button>
+  </button>  
   </router-link>
+    
+  <button id="user-library-remove-button" v-if="!isLibrary" v-on:click.prevent="removeAlbumFromCollection(collectionToBeRemoved, album.albumId)">
+    Remove Record
+  </button>  
+  
     
   </div>
 </div>
@@ -54,11 +59,21 @@ export default {
                 collectionId: ""
             },
         collections: [],
-        selectedCollectionId: 0
+        selectedCollectionId: 0,
+       
       }
   },
   created() {
-    this.loadCollections();
+    this.loadCollections();    
+  },
+  computed:{
+    isLibrary() {
+      return this.$route.name === 'Library'
+    },
+    collectionToBeRemoved() { if (this.$route.name != 'Library'){
+     return this.$route.params.collection.collectionId
+     }
+     else {return 0}}
   },
   methods: {
     showForm() {
@@ -90,6 +105,26 @@ export default {
     displayMessage(message) {
             alert(message);
     },
+    removeAlbumFromCollection(collectionId, albumId) {
+       alert(collectionId + " " + albumId);
+      recordService.removeAlbumFromCollection(this.$store.state.user.id, collectionId, albumId).then (
+                () => {
+                this.$router.push({name: 'my-collections'});
+            }
+            ).catch(
+                 error => {
+                    if(error.response) {
+                        this.errorMsg = error.response.statusText;
+                    } else if (error.request) {
+                        this.errorMsg = "We couldn't find the server";
+                    } else {
+                        this.errorMsg = "Error - we couldn't process the request";
+                    }
+                }
+            );
+            this.displayMessage("This album has been removed from your collection!");
+            
+    }
   }
 
 };

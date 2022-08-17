@@ -36,7 +36,18 @@ export default {
 
   getIndividualCollection(userId, collectionId) {
     return axios.get('/collections/' + userId + "/" + collectionId)
-  }
+  },
+
+  getAlbumsByCollectionId(userId, collectionId) {
+    return axios.get('/albums/collection/' + userId + '/' + collectionId)
+  },
+
+  removeAlbumFromCollection(userId, collectionId, albumId) {
+    return axios.delete("/collections/" + userId + "/delete/" + collectionId + '/' + albumId)
+  },
+  deleteCollection(userId, collectionId) {
+    return axios.delete("/collections/" + userId + "/delete/" + collectionId);
+  },
 
 /*   getMbid(title) {
      axios.get('http://musicbrainz.org/ws/2/annotation/?query=name:' + title)
