@@ -87,7 +87,6 @@ export default {
         )
     },
     saveAlbumToCollection(albumId) {
-      alert(this.selectedCollectionId.collectionId + " " + albumId);
 
       recordService.addAlbumToCollection(this.$store.state.user.id, this.selectedCollectionId.collectionId, albumId).catch(
                  error => {
@@ -106,7 +105,6 @@ export default {
             alert(message);
     },
     removeAlbumFromCollection(collectionId, albumId) {
-       alert(collectionId + " " + albumId);
       recordService.removeAlbumFromCollection(this.$store.state.user.id, collectionId, albumId).then (
                 () => {
                 this.$router.push({name: 'my-collections'});
