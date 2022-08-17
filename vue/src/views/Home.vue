@@ -10,8 +10,9 @@
       <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />          
     </header>
     <div class="home-container">
-     <!-- <h3>Total Records</h3> -->
-      <p v-show="getTotalRecords">{{number}}</p>
+      <div id ="box">
+      <p id="blurb">CapNTech Records was founded for vinyl lovers, by vinyl lovers. Our mission is to build a community of music lovers, both those based in Chicago and those who wish they were. Here you can document and catalogue all the records in your personal library, and add individual records from that library to collections created by you and sharable with the entire CapNTech family. Then take a minute to browse through the community's collections - you just might find your next favourite artist! </p>
+    </div>
     </div>
   </div>
 </div>
@@ -87,5 +88,26 @@ header > img {
                 1px 1px 0 #000,
                 1px -1px 0 #000,
                -1px -1px 0 #000;
+}
+#blurb {
+color: #bd1616;
+font-size: 40px;
+text-shadow: 1px 1px 0 black;
+font-family: "PT-Serif";
+opacity: 1;
+
+
+padding-left: 2%;
+padding-right: 2%;
+
+}
+#box {
+  background-color:white;
+  border-radius: 2%;
+border-right-color: red;
+border-right-style: red;
+opacity: .8;
+margin-left: 20%;
+margin-right: 20%;
 }
 </style>

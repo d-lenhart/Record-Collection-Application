@@ -39,8 +39,8 @@ export default {
 
 #router-link {
   color: gold;
-  text-shadow: -1px 1px 0 maroon,
-                1px 1px 0 maroon,
+  text-shadow: -1px 3px 0 maroon,
+                1px 3px 0 maroon,
                 1px -1px 0 maroon,
                -1px -1px 0 maroon;
   position: static;

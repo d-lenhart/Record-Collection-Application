@@ -4,11 +4,8 @@
     <header>
       <div id="header-text-container">
         <div id="headerText">
-          A vinyl hub and forum for enthusiasts and historians of the Chicago music scene
+          A Hub for Enthusiasts of the Chicago Vinyl Scene
         </div>
-      </div>
-      <div id="headerImg">
-        <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
       </div>
     </header>
 </div> 
