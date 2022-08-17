@@ -52,6 +52,10 @@ export default {
     return axios.delete("/collections/" + userId + "/delete/" + collectionId);
   },
 
+  getTotalRecords() {
+    return axios.get("/");
+  }
+
 /*   getMbid(title) {
      axios.get('http://musicbrainz.org/ws/2/annotation/?query=name:' + title)
 

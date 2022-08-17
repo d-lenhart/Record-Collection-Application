@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style scoped>
-.library-container {
+.library {
     background-image: url("/images/record-shelf-vintage-vinyl-aa5f5bfe6ab88cb4c124cefdbd2c41e1.jpg");
     background-size: cover;
     height: 100vh; 
@@ -115,6 +115,11 @@ header {
 
 #header-img {
     position: static;
+}
+
+.router-link {
+    background-color: #003;
+    border-radius: 5px;
 }
 
 </style>

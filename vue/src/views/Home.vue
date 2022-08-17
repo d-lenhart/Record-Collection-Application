@@ -10,15 +10,25 @@
       <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />          
     </header>
     <div class="home-container">
-   
+      <h3>Total Records</h3>
+      <p v-show="getTotalRecords">{{number}}</p>
     </div>
   </div>
 </div>
 </template>
 
 <script>
+//import recordService from "@/services/RecordService.js"
+
 export default {
-  name: "home"
+  name: "home",
+  /*created() {
+    recordService.getTotalRecords().then(
+      (response) => {
+         return number = response.data
+      }
+    )
+  }*/
 };
 </script>
 
