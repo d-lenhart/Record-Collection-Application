@@ -7,9 +7,6 @@
           A vinyl hub and forum for enthusiasts and historians of the Chicago music scene
         </div>
       </div>
-      <div id="headerImg">
-        <img src="@/assets/logo.png" alt="a superdy duperdy cool thing" />
-      </div>
     </header>
 </div> 
   <div id="login" class="text-center">
