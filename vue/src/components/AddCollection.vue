@@ -81,6 +81,7 @@ export default {
             },
         resetForm() {
             this.collection = {};
+        
         },
         // setPublic() {
         //     this.collection.isPublic = !this.collection.isPublic;
