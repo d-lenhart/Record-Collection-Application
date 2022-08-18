@@ -80,7 +80,7 @@ export default {
                 /* mbid: this.getMbid(),
                 albumArt: this.getAlbumArt(), */
             };
-                console.log("About to add record");
+                
            // if (userId == authService.getUserId())
             
             
@@ -100,13 +100,9 @@ export default {
                 }
             );
             this.resetForm();
-            this.displayMessage("Your album has been submitted!")
         },
         resetForm() {
             this.album = {};
-        },
-        displayMessage(message) {
-            alert(message);
         },
    /*      getMbid() {
            this.mbid = recordService.getMbid(this.title);

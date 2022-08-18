@@ -57,7 +57,7 @@ export default {
   height: 50px;
   width: 2500px;
   position: fixed;
-  margin-top: 110px;
+  margin-top: 140px;
 }
 
 #nav-element {

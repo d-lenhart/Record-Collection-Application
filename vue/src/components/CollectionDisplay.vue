@@ -96,7 +96,7 @@ export default {
     
 }
 .container {
-    font-family: 'PT Serif', 'Rubik', Calibri;
+    font-family: 'PT Serif';
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
@@ -106,6 +106,7 @@ export default {
 
 #collection-title {
     color: #eee;
+    font-family: 'PT Serif';
     text-shadow: -1px 1px 0 #cd7f32,
                 1px 1px 0 #000,
                 1px -1px 0 #000,

@@ -42,7 +42,7 @@ img {
 }
 #headerText {
   font-size: 65px;
-  font-family: 'PT Serif', 'Rubik', Calibri;
+  font-family: 'PT Serif';
   color: #eee;
   text-shadow: -1px 1px 0 maroon,
                 1px 1px 0 #000,

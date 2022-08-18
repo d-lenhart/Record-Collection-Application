@@ -1,7 +1,7 @@
 <template>
 <div class="homeBackground">
 <div class="header-container">
-    <header>
+    <header id="home-header">
       <div id="header-text-container">
       <div id="header-text">
       A Hub for Enthusiasts of the Chicago Vinyl Scene
@@ -44,8 +44,9 @@ height: 100vh;
 
 .header-container {
   text-align: center;
+  height: 20vh;
 }
-header {
+#home-header {
   display: flex;
 
   font-size: 60px;
@@ -60,13 +61,14 @@ header {
                 1px -1px 0 maroon,
                -1px -1px 0 maroon;
   padding-bottom: 50px;
-  height: 18vh;  
+  height: 15vh;  
 }
 
 #header-text {
   font-size: 65px;
   position: static;
   text-align: center;
+  padding-top: 15px;
 }
 
 header > img {

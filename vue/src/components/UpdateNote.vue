@@ -1,11 +1,17 @@
 <template>
 <div>
     <header>
+        <div id="header-text-container">
+        <div id="header-text">
+        Notes
+        </div>
+        </div>
     </header>
+    <div id="notes-container">
   <div id = "update-note">
       <form class = "form-update-note" v-on:submit.prevent="updateNote">
 			<div class = "input">
-				<label for = "note">Notes</label>
+				<label for = "note"></label>
 				<textarea id="note" name="note" rows="12" cols="60" v-model="album.notes"></textarea>
 			</div>
 			
@@ -18,6 +24,7 @@
 
 		</form>
   </div>
+</div>
 </div>
 </template>
 
@@ -75,23 +82,19 @@ export default {
                 }
             );
             this.resetForm();
-            this.displayMessage("Your notes have been updated!");
         },
         resetForm() {
             this.album = {};
-        },
-        displayMessage(message) {
-            alert(message);
-        },
-        
+        },   
     }
-
 }
 </script>
 
 <style scoped>
 header {
    background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
+   background-size: 100%;
+   background-position-y: 410px;
   font-family: 'PT Serif', 'Rubik', Calibri;
   font-size: 60px;
   color: #eee;
@@ -105,6 +108,11 @@ header {
   justify-content: center;
   text-align: center;
   position: static;
+  height: 20vh;
+}
+
+#header-text {
+    font-family: 'PT Serif';
 }
 
 
@@ -133,12 +141,13 @@ textarea {
     border-width: 10px;
     border-color: #777789;
     font-size: 25px;
-    font-family: 'PT Serif', 'Rubik', Calibri;
+    font-family: 'PT Serif';
 }
 
 .update-button {
     display: flex;
     justify-content: center;
+    padding-bottom: 300px;
 }
 
 button {
@@ -147,7 +156,7 @@ button {
     font-size: 25px;
     border-radius: 10px;
     border-color: gold;
-    font-family: 'PT Serif', 'Rubik', Calibri;
+    font-family: 'PT Serif';
 }
 .input {
     font-size: 40px;
@@ -159,6 +168,10 @@ button {
                -2px -2px 0 #000;
                display: flex;
                flex-direction: column;
+               
+               
 }
+
+
 
 </style>

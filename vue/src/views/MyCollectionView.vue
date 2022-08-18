@@ -26,8 +26,11 @@ export default {
 
 <style>
 header {
-  display: flex;
-  font-size: 60px;
+  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  background-size: 100vw;
+  background-position-y: 410px;
+  
+  height: 20vh;
 }
 
 img {
@@ -42,7 +45,7 @@ img {
 }
 #headerText {
   font-size: 65px;
-  font-family: 'PT Serif', 'Rubik', Calibri;
+  font-family: 'PT Serif';
   color: #eee;
   text-shadow: -1px 1px 0 maroon,
                 1px 1px 0 #000,
@@ -53,7 +56,7 @@ img {
   justify-content: center;
   text-align: center;
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 50px;
   position: static;
 }
 

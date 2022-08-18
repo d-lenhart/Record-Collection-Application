@@ -98,12 +98,6 @@ export default {
                     }
                 }
             );
-            if (this.selectedCollectionId.collectionId > 0) {
-            this.displayMessage("This album has been added to your collection!");
-      }
-    },
-    displayMessage(message) {
-            alert(message);
     },
     removeAlbumFromCollection(collectionId, albumId) {
       recordService.removeAlbumFromCollection(this.$store.state.user.id, collectionId, albumId).then (
@@ -120,9 +114,7 @@ export default {
                         this.errorMsg = "Error - we couldn't process the request";
                     }
                 }
-            );
-            this.displayMessage("This album has been removed from your collection!");
-      
+            );     
     }
   }
 

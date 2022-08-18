@@ -116,8 +116,10 @@ export default {
 <style scoped>
 header {
   background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  background-size: 100vw;
+  background-position-y: 410px;
   
-  height: 18vh;
+  height: 20vh;
 }
 
 img {
@@ -144,7 +146,7 @@ img {
   justify-content: space-between;
   text-align: center;
   border-radius: 20px;
-  padding-bottom: 30px;
+  padding-top: 50px;
   position: static;
 }
 

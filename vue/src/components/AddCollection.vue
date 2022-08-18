@@ -78,13 +78,9 @@ export default {
                 }
             );
             this.resetForm();
-            this.displayMessage("Your collection has been created!");
             },
         resetForm() {
             this.collection = {};
-        },
-        displayMessage(message) {
-            alert(message);
         },
         // setPublic() {
         //     this.collection.isPublic = !this.collection.isPublic;
@@ -180,11 +176,13 @@ label {
 
 button {
     color:#cd7f32;
+    font-family: 'PT Serif';
     background-color: #003;
     border-color: silver;
     height: 50px;
     width: 280px;
     font-size: 30px;
+    border-radius: 10px;
 }
 
 .collection-background {

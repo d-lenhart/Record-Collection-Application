@@ -2,7 +2,7 @@
 <div class="library">
     <header>
         <div id="header-text-container">
-        <div>
+        <div id="header-text">
         {{user.username}}'s Library
         </div>
         </div>
@@ -89,10 +89,16 @@ img {
   border-radius: 20px;
 }
 
-
+#header-text {
+    padding-top: 40px;
+}
 
 header {
   background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  background-size: 100vw;
+  background-position-y: 410px;
+  
+  height: 20vh;
   font-family: 'PT Serif', 'Rubik', Calibri;
   font-size: 60px;
   color: #eee;
@@ -100,9 +106,8 @@ header {
                 1px 1px 0 maroon,
                 1px -1px 0 maroon,
                -1px -1px 0 maroon;
-  height: 20vh;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   text-align: center;
 }
@@ -110,7 +115,10 @@ header {
 #header-text-container {
     height: 90px;
     width: 1800px;
+    
 }
+
+
 
 #header-img {
     position: static;
