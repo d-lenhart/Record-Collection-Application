@@ -103,7 +103,7 @@ img {
 
 header {
   background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
-  font-family: 'PT Serif', 'Rubik', Calibri;
+  font-family: 'PT Serif';
   font-size: 60px;
   color: #eee;
   text-shadow: -1px 1px 0 black,
@@ -118,9 +118,7 @@ header {
 }
 
 #header-text-container {
-    height: 180px;
     width: 1800px;
-    margin-top: 100px;
 }
 
 #header-img {
