@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" v-if="!isDeleteRecord">
       <div id="route-container">
       <router-link id="router-link" v-bind:to="{ name: 'home' }">Home &nbsp; |&nbsp;</router-link>
       <router-link id="router-link" v-bind:to="{ name: 'Library' }" v-if="$store.state.token != ''">My Library &nbsp; |&nbsp;</router-link>
@@ -21,6 +21,11 @@ export default {
     return {
       //image: "@/assets/810ptAJn4zL._AC_SL1500_.jpg"
     }
+  },
+  computed:{
+    isDeleteRecord() {
+      return this.$route.name === 'delete-record';
+    },
   }
 }
 </script>

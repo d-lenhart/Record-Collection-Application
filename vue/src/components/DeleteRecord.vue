@@ -86,6 +86,7 @@ button[type="submit"] {
     color: white;
     background-color: red;
     border-color: gold;
+    font-size: 28px;
 }
 
 #return-to-library {
