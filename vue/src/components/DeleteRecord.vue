@@ -81,7 +81,7 @@ form {
 }
 
 button[type="submit"] {
-    height: 60px;
+    height: 75px;
     width: 180px;
     color: white;
     background-color: red;
@@ -89,7 +89,7 @@ button[type="submit"] {
 }
 
 #return-to-library {
-    height: 60px;
+    height: 75px;
     width: 180px;
     background-color: darkgreen;
     color: #eee;

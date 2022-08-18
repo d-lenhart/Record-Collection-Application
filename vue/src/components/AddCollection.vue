@@ -78,13 +78,10 @@ export default {
                 }
             );
             this.resetForm();
-            this.displayMessage("Your collection has been created!");
             },
         resetForm() {
             this.collection = {};
-        },
-        displayMessage(message) {
-            alert(message);
+        
         },
         // setPublic() {
         //     this.collection.isPublic = !this.collection.isPublic;

@@ -102,9 +102,6 @@ export default {
             this.displayMessage("This album has been added to your collection!");
       }
     },
-    displayMessage(message) {
-            alert(message);
-    },
     removeAlbumFromCollection(collectionId, albumId) {
       recordService.removeAlbumFromCollection(this.$store.state.user.id, collectionId, albumId).then (
                 () => {
