@@ -7,8 +7,8 @@
               </router-link>
               <div id="content-container">
                 <div id="collection-content">
-                    <p><u>Title</u>: {{ collection.title }}</p>
-                    <p><u>Notes</u>: {{ collection.notes }}</p>
+                    <p id="content-text"><u>Title</u>: {{ collection.title }}</p>
+                    <p id="content-text"><u>Notes</u>: {{ collection.notes }}</p>
               
                     <button id="user-library-delete-button" 
                     v-if="isMyCollections" 
@@ -113,6 +113,7 @@ export default {
                -1px -1px 0 #000;
     text-decoration: underline;
     text-decoration-color: black;
+    font-size: min(max(40px), 4vw);
 }
 
 #collection-content {
@@ -130,6 +131,10 @@ export default {
                 1px 1px 0 #000,
                 1px -1px 0 #000,
                -1px -1px 0 #000;
+}
+
+#content-text {
+    font-size: min(max(40px), 4vw);
 }
 
 

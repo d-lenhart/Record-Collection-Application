@@ -132,6 +132,7 @@ export default {
     height: 100vh;
     background-size: cover;
   background-image: url("/images/recordStack.jpg") ;
+  overflow-y: scroll;
 
 }
 

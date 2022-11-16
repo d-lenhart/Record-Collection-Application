@@ -10,14 +10,14 @@ import org.springframework.web.client.RestTemplate;
 public class DiscogsService {
     private static final String SEARCH = "database/search?q=";
     private static final String BASE_URL = "https://api.discogs.com/";
-    private static final String API_KEY = "QDrNozwlMGIwfLTPCPwb";
+    private static final String API_KEY = "&key=QDrNozwlMGIwfLTPCPwb";
 
     private RestTemplate restTemplate = new RestTemplate();
 
-    public SearchResponse search(String expression) {
+    public Object search(String expression) {
         String url = BASE_URL + SEARCH + expression + API_KEY;
-        SearchResponse searchResponse = restTemplate.getForObject(url, SearchResponse.class);
-        return SearchResponse;
+        Object searchResponse = restTemplate.getForObject(url, SearchResponse.class);
+        return searchResponse;
     }
 
     public RecordDTO getRecords(String id) {
@@ -30,3 +30,4 @@ public class DiscogsService {
         record.setCoverImg(searchResult.getCoverImg());
         }
      */
+}

@@ -8,7 +8,9 @@
         </div>
       </div>
       </header> 
+      <div id="add-record">
       <add-record />
+      </div>
   </div>
 </div>
   
@@ -30,41 +32,43 @@ export default {
 </script>
 
 <style scoped>
-header {
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
-  background-size: 100vw;
-  background-position-y: 410px;
-  
-  height: 17vh;
 
-   font-family: 'PT Serif', 'Rubik', Calibri;
-  font-size: 60px;
-  color: #eee;
-  text-shadow: -1px 1px 0 black,
-                1px 1px 0 maroon,
-                1px -1px 0 maroon,
-               -1px -1px 0 maroon;
-  display: flex;
-  align-items: top;
-  justify-content: center;
-  text-align: center;
-  padding-top: 30px;
+header {
+  background: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  height: 24vh;
+  background-position-x: 0px;
+  background-position-y: -100px;
+  background-repeat: repeat-x;
+  position: static;
+}
+
+.header-container {
+  height: 24vh;
 }
 
 #headerText {
-  font-size: 80px;
+  font-size: min(max(40px), 4vw);
+  font-family: 'PT Serif';
+  color: #eee;
+  text-shadow: -1px 1px 0 maroon,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
+  padding-top: 11vh;
   text-align: center;
+  margin: auto;
+  position: static;
 }
 
 #header-text-container {
-  height: 100px;
-  width: 500px;
-  margin-bottom: 50px;
   display: flex;
-  text-align: center;
-  justify-content: center;
-  text-align: center;
+  width: 100vw;
+  height: 2px;
+  position: static;
 }
 
+#add-record {
+  height: 76vh;
+}
 
 </style>

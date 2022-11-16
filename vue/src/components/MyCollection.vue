@@ -62,8 +62,10 @@ export default {
 #nav {
     color: white;
 }
+
 #collection-display-container {
     color: white;
+    margin-top: 16vh;
 }
 
 .container {
@@ -75,8 +77,8 @@ export default {
 }
 
 #new-collection-text {
-  width: 450px;
-  font-size: 45px;
+  width: min(max(450px), 40vw);
+  font-size: min(max(45px), 4vw);
   color: silver;
   text-shadow: -1px 1px 0 #cd7f32,
                 1px 1px 0 #000,
@@ -84,8 +86,7 @@ export default {
                -1px -1px 0 #000;
 background: #003;
 border-radius: 5px;
-  
-  
+padding-top: 24vh;
 }
 
 </style>

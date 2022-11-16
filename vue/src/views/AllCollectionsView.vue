@@ -9,7 +9,7 @@
             </div>
         </header>
       </div>
-      <div>
+      <div id="all-collections">
         <allCollections />
       </div>
   </div>
@@ -25,9 +25,39 @@ export default {
 </script>
 
 <style scoped>
+
 header {
+  background: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  height: 24vh;
+  background-position-x: 0px;
+  background-position-y: -100px;
+  background-repeat: repeat-x;
+  position: static;
+}
+
+.header-container {
+  height: 24vh;
+}
+
+#headerText {
+  font-size: min(max(40px), 4vw);
+  font-family: 'PT Serif';
+  color: #eee;
+  text-shadow: -1px 1px 0 maroon,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
+  padding-top: 11vh;
+  text-align: center;
+  margin: auto;
+  position: static;
+}
+
+#header-text-container {
   display: flex;
-  font-size: 60px;
+  width: 100vw;
+  height: 2px;
+  position: static;
 }
 
 img {
@@ -37,35 +67,10 @@ img {
   position: fixed;
 }
 
-.header-container {
-  text-align: center;
-}
-#headerText {
-  font-size: 65px;
-  font-family: 'PT Serif';
-  color: #eee;
-  text-shadow: -1px 1px 0 maroon,
-                1px 1px 0 #000,
-                1px -1px 0 #000,
-               -1px -1px 0 #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 20px;
-  margin-top: 20px;
-  position: static;
-}
-
-#header-text-container {
-  height: 100px;
-  width: 1800px;
-  position: fixed;
-}
-
-.background {
+#all-collections {
   background-image: url("/images/publiccollectionBG.jpg");
   height: 100vh;
   background-size: cover;
 }
+
 </style>

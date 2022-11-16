@@ -21,7 +21,7 @@ public class LibraryStatisticController {
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public Statistics getTotalRecords(){
-        Statistics libraryStatistics = libraryStatisticDao.listMostPopularArtists();
+        Statistics libraryStatistics = libraryStatisticDao.totalRecords();
         return libraryStatistics;
     }
 

@@ -3,9 +3,9 @@
   <div class="header-container">
     <header>
       <div id="header-text-container">
-      <div id="headerText">
-        A Hub for Enthusiasts of the Chicago Vinyl Scene
-      </div>
+        <div id="headerText">
+          A Hub for Enthusiasts of the Chicago Vinyl Scene
+        </div>
       </div>
        <div id="headerImg">
       </div>
@@ -114,46 +114,46 @@ export default {
 </script>
 
 <style scoped>
-header {
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
-  background-size: 100vw;
-  background-position-y: 410px;
-  
-  height: 20vh;
-}
 
-img {
-  border-radius: 40px;
-  height: 20%;
-  margin-left: 750px;
-  position: fixed;
+header {
+  background: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  height: 100vh;
+  background-position-x: 0px;
+  background-position-y: -100px;
+  background-repeat: repeat-x;
+  position: static;
 }
 
 .header-container {
-  text-align: center;
+  height: 24vh;
 }
 
 #headerText {
-  font-size: 65px;
+  font-size: min(max(40px), 4vw);
   font-family: 'PT Serif';
   color: #eee;
   text-shadow: -1px 1px 0 maroon,
                 1px 1px 0 #000,
                 1px -1px 0 #000,
                -1px -1px 0 #000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding-top: 11vh;
   text-align: center;
-  border-radius: 20px;
-  padding-top: 50px;
+  margin: auto;
   position: static;
 }
 
 #header-text-container {
-  height: 100px;
-  width: 1800px;
-  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 2px;
+  position: static;
+}
+
+img {
+  border-radius: 40px;
+  height: 20%;
+  margin-left: 750px;
+  position: static;
 }
 
 h1 {

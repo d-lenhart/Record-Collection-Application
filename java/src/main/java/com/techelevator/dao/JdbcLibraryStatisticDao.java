@@ -21,7 +21,7 @@ public class JdbcLibraryStatisticDao implements LibraryStatisticDao {
     }
 
     @Override
-    public Statistics totalRecords (){
+    public Statistics totalRecords(){
         Statistics albumsCount;
 
         String sql = "SELECT COUNT(*) " +

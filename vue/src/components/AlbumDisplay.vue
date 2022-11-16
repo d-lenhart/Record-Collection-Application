@@ -144,18 +144,18 @@ time, mark, audio, video {
 }
 
 p {
-  font-size: 25px;
+  font-size: min(max(25px), 4vw);
 }
 
 h3 {
-  font-size: 40px;
+  font-size: min(max(40px), 5vw);
   font-weight: bold;
   text-align: center;
 }
 
 .album-container {
-  height: 600px;
-  width: 300px;
+  height: min(max(600px), 100vw);
+  width: min(max(300px), 60vw);
   display: flex;
   padding: 20px;
   flex-wrap: wrap;
@@ -164,8 +164,8 @@ h3 {
 }
 
 .album {
-  height: 550px;
-  width: 300px;
+  height: min(max(550px), 90vw);
+  width: min(max(280px), 56vw);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,11 +173,12 @@ h3 {
   background-color: lightblue;
   border-radius: 15px;
   color: black;
+  padding-left: 2vw;
+  padding-right: 1vw;
   text-shadow: -1px 1px 0 maroon,
                 1px 1px 0 silver,
                 1px -1px 0 silver,
                -1px -1px 0 silver;
-  
 }
 
 #user-library-button {

@@ -1,5 +1,6 @@
 <template>
 <div class="library">
+  <div class="header-container">
     <header>
         <div id="header-text-container">
         <div id="header-text">
@@ -7,6 +8,7 @@
         </div>
         </div>
     </header>
+  </div>
      <router-link class="router-link" v-bind:to="{name: 'Albums' }" v-if="$store.state.token != ''">Add an album to your library</router-link>
     <div class="library-container">
      <album-display class="container"
@@ -68,20 +70,24 @@ export default {
 .library {
     background-image: url("/images/record-shelf-vintage-vinyl-aa5f5bfe6ab88cb4c124cefdbd2c41e1.jpg");
     background-size: cover;
-    height: 100vh; 
+    height: 100vh;
+    width: 100vw;
     background-attachment: scroll;
-}
-
+    position: fixed;
+}   
 .library-container {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 36vh;
+    height: 76vh;
+    z-index: 25;
+    overflow-y: scroll;
 }
 .container {
     display: flex;
     flex-wrap: wrap;
     gap: 30px; 
-    margin-top: 100px;
-    margin-bottom: 150px;  
+    margin-bottom: 150px;
 }
 
 
@@ -89,33 +95,38 @@ img {
   border-radius: 20px;
 }
 
-#header-text {
-    padding-top: 40px;
+header {
+  background: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  height: 24vh;
+  background-position-x: 0px;
+  background-position-y: -100px;
+  background-repeat: repeat-x;
+  position: static;
 }
 
-header {
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
-  background-size: 100vw;
-  background-position-y: 410px;
-  
-  height: 20vh;
-  font-family: 'PT Serif', 'Rubik', Calibri;
-  font-size: 60px;
+.header-container {
+  height: 24vh;
+}
+
+#headerText {
+  font-size: min(max(60px), 4vw);
+  font-family: 'PT Serif';
   color: #eee;
-  text-shadow: -1px 1px 0 black,
-                1px 1px 0 maroon,
-                1px -1px 0 maroon,
-               -1px -1px 0 maroon;
-  display: flex;
-  align-items: top;
-  justify-content: center;
+  text-shadow: -1px 1px 0 maroon,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
+  padding-top: 12vh;
   text-align: center;
+  margin: auto;
+  position: static;
 }
 
 #header-text-container {
-    height: 90px;
-    width: 1800px;
-    
+  display: flex;
+  width: 100vw;
+  height: 2px;
+  position: static;
 }
 
 
@@ -127,12 +138,15 @@ header {
 .router-link {
     background-color: #003;
     border-radius: 5px;
-  font-size: 45px;
-  color: silver;
-  text-shadow: -1px 1px 0 #cd7f32,
+    font-size: min(max(45px), 6vw);
+    color: silver;
+    text-shadow: -1px 1px 0 #cd7f32,
                 1px 1px 0 #000,
                 1px -1px 0 #000,
                -1px -1px 0 #000;
+    margin-top: 24vh;
+    position: fixed;
+    z-index: 5;
 }
 
 </style>

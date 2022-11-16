@@ -4,6 +4,7 @@ import com.techelevator.dao.StandardCollectionDao;
 import com.techelevator.dao.StandardUserDao;
 import com.techelevator.model.Album;
 
+import com.techelevator.services.DiscogsService;
 import org.springframework.http.HttpStatus;
 
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,16 @@ public class StandardUserController {
 //
 //        return standardUserDao.getAlbum(albumId);
 //    }
+
+    @RequestMapping(path = "/test", method = RequestMethod.GET)
+    public String test() {
+
+        DiscogsService ds = new DiscogsService();
+        ds.search("Boston");
+
+        return "Hello World!";
+    }
+
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/albums/{userId}", method = RequestMethod.POST)

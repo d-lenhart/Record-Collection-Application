@@ -2,7 +2,7 @@
 <div class="library">
     <header>
         <div id="header-text-container">
-        <div>
+        <div id="header-text">
            {{this.$route.params.collection.title}}
        </div>
         </div>
@@ -73,52 +73,65 @@ export default {
 </script>
 
 <style scoped>
-.library-container {
-    background-image: url("/images/collectionBG.jpg");
-    background-size: cover;
-    height: 100vh; 
-    background-attachment: scroll;
-    
+
+header {
+  background: url("/images/ChicagoSkylineWideSmallerer.jpg");
+  height: 24vh;
+  background-position-x: 0px;
+  background-position-y: -100px;
+  background-repeat: repeat-x;
+  position: static;
 }
 
+.header-container {
+  height: 24vh;
+}
+
+#headerText {
+  font-size: min(max(40px), 4vw);
+  font-family: 'PT Serif';
+  color: #eee;
+  text-shadow: -1px 1px 0 maroon,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
+  padding-top: 11vh;
+  text-align: center;
+  margin: auto;
+  position: static;
+}
+
+#header-text-container {
+  display: flex;
+  width: 100vw;
+  height: 2px;
+  position: static;
+}
+
+.library {
+    background-image: url("/images/collectionBG.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    background-attachment: scroll;
+    position: fixed;
+}   
 .library-container {
     display: flex;
     flex-wrap: wrap;
+    height: 76vh;
+    z-index: 25;
+    overflow-y: scroll;
 }
 .container {
     display: flex;
     flex-wrap: wrap;
     gap: 30px; 
-    margin-top: 100px;
-    margin-bottom: 150px; 
+    margin-bottom: 150px;
 }
-
 
 img {
   border-radius: 20px;
-}
-
-
-
-
-header {
-  background-image: url("/images/ChicagoSkylineWideSmallerer.jpg");
-  font-family: 'PT Serif';
-  font-size: 60px;
-  color: #eee;
-  text-shadow: -1px 1px 0 black,
-                1px 1px 0 maroon,
-                1px -1px 0 maroon,
-               -1px -1px 0 maroon;
-  height: 20vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-#header-text-container {
-    width: 1800px;
 }
 
 #header-img {
